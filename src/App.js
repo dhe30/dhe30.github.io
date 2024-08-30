@@ -12,6 +12,7 @@ import Filter from "./components/Filter";
 import useWindowSize from "./hooks/useWindowSize";
 import Showcase from "./components/Showcase";
 import Keywords from "./components/Keywords";
+import Scdescriptor from "./components/Scdescriptor";
 function App() {
   const { width } = useWindowSize();
   return (
@@ -38,6 +39,7 @@ function App() {
               </div>
               <Keywords keywords={["Code", "Code2"]}></Keywords>
               <Showcase></Showcase>
+              <Scdescriptor></Scdescriptor>
           </Col>
           {width >= 1085 && 
             <Col xs="auto" className="test">

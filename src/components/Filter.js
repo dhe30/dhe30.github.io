@@ -123,7 +123,7 @@ function Filter() {
                 )}
                 <button 
                   type="button" 
-                  className={`unbutton nunito-regular filter-button ${showBox && "filter-buttoHov"}`}
+                  className={`unbutton nunito-regular ${showBox ? "filter-buttoHov filter-buttonV2" : "filter-button"}`}
                   style={{width: "30px", height: "30px", borderRadius: "15px", border: "1px solid #DB96F3", fontSize:"28px", transition:"0.15s", marginTop:"2px"}}
                   onClick={handleOnClick}
                   onMouseDown={handleOnMouseDown}

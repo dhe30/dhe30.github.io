@@ -206,7 +206,18 @@ li:not(:last-child) {
 .filter-button:hover {
   color: white;
   background-color: #DB96F3;
+  transform: scale(1.1);
+}
+
+.filter-buttonV2 {
+  color: white;
+  transition: all 0.25s;
+}
+
+.filter-buttonV2:hover {
+  background-color: #DB96F3;
   transform: scale(1.1) rotate(45deg);
+  transition: all 0.25s;
 }
 
 input:focus {
@@ -270,4 +281,9 @@ input::placeholder {
 
 .results:hover {
   background-color: #E4E4E4;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
 }
