@@ -1,6 +1,6 @@
 import right from "../assets/right.svg";
 function Crumbs({crumbs}) {
-    const test = ["Home", "Projects", "Collections"];
+    const test = crumbs || ["Home", "Projects", "Collections"];
     return (
         <div className="mb-5">
             <span className="crumbs jetbrains-mono-yuh" style={{fontSize: "24px"}}>

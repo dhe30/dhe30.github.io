@@ -152,7 +152,6 @@ function Filter() {
                 })
 
             }
-            {""+isFocused}
         </div>
     )
 }

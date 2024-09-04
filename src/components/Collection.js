@@ -2,7 +2,7 @@ import { Badge, Col, Row } from "react-bootstrap";
 import '../index.css';
 import arrow from "../assets/rightarrow.svg";
 import GreyTag from "./GreyTag";
-function Collections() {
+function Collection() {
     return (
         <Row>
             <Col className="test pb-3" xs="auto">
@@ -39,4 +39,4 @@ function Collections() {
     )
 }
 
-export default Collections;
+export default Collection;

@@ -28,7 +28,7 @@ function Breadish({bread = {"Collections" : ["collectionitem1", "collectionitem2
         <Accordion defaultActiveKey={[]} alwaysOpen>
             {Object.keys(bread).map((item, index) => {
                 return (
-                    <div className='inika-regular unlist' style={{fontSize: '14px'}}>
+                    <div className='inika-regular unlist' style={{fontSize: '16px', lineHeight:"20px"}}>
                         <CustomToggle eventKey={index}>{item} </CustomToggle>
                         <Accordion.Collapse eventKey={index} className='' style={{width:"fit-content"}}>
                             <ul className='' style={{marginBottom:"0px"}}>

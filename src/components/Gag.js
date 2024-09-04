@@ -42,7 +42,8 @@ function Gag() {
         sticky="top"
         style={{backgroundColor:"white", opacity:"0.8"}}
         >
-            <Container className='bar-bar justify-content-left'>
+            {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
+            <Container fluid className='test bar-bar justify-content-left'>
                 <Navbar.Brand className='bar test' style={{marginLeft:"0"}}> 
                    <span className='headings'> FirstName LastName </span>
                 </Navbar.Brand>
