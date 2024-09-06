@@ -12,9 +12,9 @@ function useWheel() {
     }
 
     useEffect(() => {
-        window.addEventListener("wheel", setScrollSpeed);
+        window.addEventListener("scroll", setScrollSpeed);
         return () => {
-            window.removeEventListener("wheel", setScrollSpeed);
+            window.removeEventListener("scroll", setScrollSpeed);
         }
     },[]);
 

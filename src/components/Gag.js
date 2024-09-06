@@ -43,7 +43,7 @@ function Gag() {
         style={{backgroundColor:"white", opacity:"0.8"}}
         >
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
-            <Container fluid className='test bar-bar justify-content-left'>
+            <Container fluid className='test bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
                 <Navbar.Brand className='bar test' style={{marginLeft:"0"}}> 
                    <span className='headings'> FirstName LastName </span>
                 </Navbar.Brand>

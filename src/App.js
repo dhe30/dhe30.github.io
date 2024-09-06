@@ -12,14 +12,14 @@ import Filter from "./components/Filter";
 import useWindowSize from "./hooks/useWindowSize";
 
 import { Outlet } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import useWheel from "./hooks/useWheel";
 
 function App() {
-  const { width } = useWindowSize();
-  const [crumbs, setCrumbs] = useState(["Home", "Projects", "Collections"]);
-  function handleCrumbs (a) {
-    setCrumbs(a);
-  }
   return (
+    <>
+    <ScrollToTop>
+    </ScrollToTop>
     <div>
       {/* <div className="bar"><Gag></Gag></div> */}
       <Gag></Gag>
@@ -28,6 +28,7 @@ function App() {
       <Outlet/>
       
     </div>
+    </>
   );
 }
 
