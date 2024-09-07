@@ -38,13 +38,13 @@ function Gag() {
     }, [speed])
 
     return (
-        <Navbar className={`test prevent-select nav-trans inter-love ${showNav? 'nav-mask-show' : pos > 90? 'nav-mask-hide': 'nav-mask-show'}`} 
+        <Navbar className={`prevent-select nav-trans inter-love ${showNav? 'nav-mask-show' : pos > 90? 'nav-mask-hide': 'nav-mask-show'}`} 
         sticky="top"
         style={{backgroundColor:"white", opacity:"0.8"}}
         >
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
-            <Container fluid className='test bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
-                <Navbar.Brand className='bar test' style={{marginLeft:"0"}}> 
+            <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
+                <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
                    <span className='headings'> FirstName LastName </span>
                 </Navbar.Brand>
                 <Nav className='bar-bar-bar justify-content-left'>

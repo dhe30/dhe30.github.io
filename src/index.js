@@ -7,34 +7,30 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
-  ScrollRestoration,
 } from "react-router-dom";
 
 import App from "./App";
 import Collections from './routes/Collections';
 import Projects from './routes/Projects';
+import Misc from './routes/Misc';
 
-const AppLayout = () => (
-  <>
-    <ScrollRestoration 
-    onBeforeRestore={() => window.scrollTo(0, 0)}
-    />
-    <App />
-  </>
-);
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <App />,
     children: [
       {
         path: "/",
         element: <Collections />,
       },
       {
-        path: "/projects",
+        path: "/webdev",
         element: <Projects />,
+      },
+      {
+        path: "/graphics",
+        element: <Misc />,
       },
     ],
   },

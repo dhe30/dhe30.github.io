@@ -18,14 +18,14 @@ export default function Projects() {
     return (
         <ProjectWrapper wid={1025}>
             <Crumbs crumbs={["Home", "Projects", "Collections", "WebDev"]}></Crumbs>
-            <Row className=" test justify-content-center p-0 m-0">
-                <Col className="pb-4 test" xs="auto">
-                    <Col className="test" style={{maxWidth:"550px"}} xs="12">
+            <Row className="justify-content-center p-0 m-0">
+                <Col className="pb-4" xs="auto">
+                    <Col className="" style={{maxWidth:"550px"}} xs="12">
                         <Keywords keywords={["Code", "Code2"]}></Keywords>
                     </Col>
                     <Showcase></Showcase>
                 </Col>
-                <Col className="test" style={{minWidth:"250px", maxWidth:"550px"}}>
+                <Col className="" style={{minWidth:"250px", maxWidth:"550px"}}>
                     <Scdescriptor></Scdescriptor>
                 </Col>
             </Row>

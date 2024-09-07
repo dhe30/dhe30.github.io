@@ -15,19 +15,19 @@ export default function ProjectWrapper({wid, children}) {
     const [crumb, setCrumb] = useState([]);
     return (
         <Container fluid className="test d-flex justify-content-center p-0 m-0">
-                <Row className="mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1200px"}}>
+                <Row className="mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
                 <Back></Back>
-                <Col className="" xs="auto">
+                <Col className="test" xs="auto" style={{width:""}}>
                     <div>
                     {width < wid && <Filter></Filter>}
                     <Breadish></Breadish>
                     </div>
                 </Col>
-                <Col className="">
+                <Col className="" style={{position:"relative"}}>
                     {children}
                 </Col>
                 {width >= wid && 
-                    <Col xs="auto" className="">
+                    <Col xs="auto" className="test">
                     <Filter></Filter>
                     </Col>
                 }

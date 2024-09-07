@@ -38,6 +38,9 @@ function Showcase() {
     //for confusion as to why this is needed https://overreacted.io/making-setinterval-declarative-with-react-hooks/
     useEffect(() => {
         savedCallback.current = backward;
+        return () => {
+            clearInterval(loop);
+        }
       });
 
     useEffect(() => {
