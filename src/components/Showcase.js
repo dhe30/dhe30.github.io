@@ -3,7 +3,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import left from "../assets/Frame 28.svg";
 import right from "../assets/Frame 29.svg";
 
-function Showcase() {
+function Showcase({clientWidth}) {
     const test = [
         {img:"map.png", caption: "10"},
         {img:"spoiler.png", caption: "1"},
@@ -18,6 +18,8 @@ function Showcase() {
     const three = useRef([]);
     const four = useRef([]);
     const savedCallback = useRef();
+    const limit = 1235;
+    const heightRatio = 370;
 
     const [one,setOne] = useState([two,three,four]);
     const [images, setImages] = useState([minus(0),0,plus(0),])
@@ -38,9 +40,9 @@ function Showcase() {
     //for confusion as to why this is needed https://overreacted.io/making-setinterval-declarative-with-react-hooks/
     useEffect(() => {
         savedCallback.current = backward;
-        return () => {
-            clearInterval(loop);
-        }
+        // return () => {
+        //     clearInterval(loop);
+        // }
       });
 
     useEffect(() => {
@@ -110,13 +112,14 @@ function Showcase() {
         }
     }
     return (
-        <div className="" style={{position:"relative", width: "fit-content"}}>
+        <div className="test" style={{position:"relative", width: "100%", backgroundColor:"red"}}>
+            {/* {clientWidth} */}
                 <div 
                     style={{
                         position:"relative", 
                         overflow:"hidden",
-                        width: `${width < 600 ? 520-(600-width):520}px`,
-                        height: `${width < 600 ? ((520-(600-width))/520)*370:370}px`,
+                        width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                     }}
                 >
                      <button 
@@ -126,7 +129,7 @@ function Showcase() {
                         style={{
                             position:"absolute",
                             right:"0",
-                            top: `${width < 600 ? ((520-(600-width))/520)*370/2:370/2}px`,
+                            top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
                             zIndex: "1"
                         }}
                     >
@@ -139,7 +142,7 @@ function Showcase() {
                         style={{
                             position:"absolute",
                             left:"0",
-                            top: `${width < 600 ? ((520-(600-width))/520)*370/2:370/2}px`,
+                            top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
                             zIndex: "1"
                         }}
                     >
@@ -149,11 +152,11 @@ function Showcase() {
                         alt="" 
                         style={{
                             objectFit: "cover",
-                            width: `${width < 600 ? 520-(600-width):520}px`,
-                            height: `${width < 600 ? ((520-(600-width))/520)*370:370}px`,
+                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                             position:"absolute",
                             top:"0",
-                            left: `-${width < 600 ? 520-(600-width):520}px`,
+                            left: `-${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
                         }} 
                         src={require(`../assets/${test[images[0]].img}`)}
                         ref={two}
@@ -162,8 +165,8 @@ function Showcase() {
                         alt="" 
                         style={{
                             objectFit: "cover",
-                            width: `${width < 600 ? 520-(600-width):520}px`,
-                            height: `${width < 600 ? ((520-(600-width))/520)*370:370}px`,
+                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                             position:"absolute",
                             top:"0",
                             left: "0"
@@ -175,11 +178,11 @@ function Showcase() {
                         alt="" 
                         style={{
                             objectFit: "cover",
-                            width: `${width < 600 ? 520-(600-width):520}px`,
-                            height: `${width < 600 ? ((520-(600-width))/520)*370:370}px`,
+                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                             position:"absolute",
                             top:"0",
-                            left: `${width < 600 ? 520-(600-width):520}px`,
+                            left: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
                         }} 
                         src={require(`../assets/${test[images[2]].img}`)}
                         ref={four}

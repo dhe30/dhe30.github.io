@@ -145,11 +145,14 @@ function Filter() {
                 ></input>
             </form>    
             {(showBox && results && search.length > 0 && isFocused) &&
-                results.map((elem) => {
+                <div style={{position:"absolute"}}>
+                    {
+                    results.map((elem) => {
                     return (
                         <button className="results test unbutton px-3" type="button" onMouseDown={()=>handleResults(elem)}>{elem}</button> 
                     )
-                })
+                })}
+                </div>
 
             }
         </div>
