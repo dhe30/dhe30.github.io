@@ -14,6 +14,7 @@ import MenuModal from "./MenuModal";
 export default function ProjectWrapper({wid, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
+    const [tags, setTags] = useState(["Programming"]);
     return (
         <Container fluid className="test d-flex justify-content-center p-0 m-0 p-relative">
                 <Row className="mx-3 mx-sm-3 mx-md-4 test" style={{maxWidth:"1300px"}}>
@@ -21,23 +22,22 @@ export default function ProjectWrapper({wid, children}) {
                 { width > 800 ?
                     <Col className="test" xs="auto" style={{width:""}}>
                         <div>
-                        {width < wid && <Filter></Filter>}
+                        {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
                         <Breadish></Breadish>
                         </div>
                     </Col>
                     : 
                     <div className="" style={{position:"absolute", top:"55px", height:"100%"}}>
-                        <MenuModal></MenuModal>
+                        <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     </div>
                 }
-                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - 400 + "px":width - 250 + "px":""}`, backgroundColor:"blue"}}>
-                {width > 800? width - 250:""}
-                {"gas"}
+                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - 400 + "px":width - 250 + "px":""}`}}>
+                {/* {width > 800? width - 250:""} */}
                     {children}
                 </Col>
                 {width >= wid && 
                     <Col xs="auto" className="test">
-                    <Filter></Filter>
+                    <Filter tags={tags} setTags={setTags}></Filter>
                     </Col>
                 }
                 </Row>

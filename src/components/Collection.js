@@ -18,7 +18,7 @@ function Collection() {
                         src={require("../assets/taxim.png")}></img>
             </Col>
             <Col style={{minWidth:"300px"}}>
-                <Link to="/projects" preventScrollReset={true}>
+                <Link to="/webdev" preventScrollReset={true}>
                 <span className="test istok-web-regular" style={{display: "block"}}>
                     <h1 className="test me-2" style={{display: "inline-block"}}>Web Dev</h1>
                     <img 

@@ -112,7 +112,7 @@ function Showcase({clientWidth}) {
         }
     }
     return (
-        <div className="test" style={{position:"relative", width: "100%", backgroundColor:"red"}}>
+        <div className="" style={{position:"relative"}}>
             {/* {clientWidth} */}
                 <div 
                     style={{

@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import filter from "../assets/filter.svg";
 import GreyTag from "./GreyTag";
-function Filter() {
+function Filter({tags, setTags}) {
     // const [tags, setTags] = useState([]);
     const destory = (tag) => {
         console.log(`destroy ${tag}`);
@@ -13,7 +13,7 @@ function Filter() {
     const [tagsClicked, setTagsClicked] = useState(false);
     const [showBox, setShowBox] = useState(false);
     const [results, setResults] = useState([]);
-    const [tags, setTags] = useState(["ss"]);
+    // const [tags, setTags] = useState(["ss"]);
     const [isFocused, setIsFocused] = useState(false);
     const [search, setSearch] = useState("");
     const [beforeClick, setBeforeClick] = useState(false);

@@ -35,7 +35,7 @@ export default function Projects() {
             <Crumbs crumbs={["Home", "Projects", "Collections", "WebDev"]}></Crumbs>
             <Row 
                 className="justify-content-center p-0 m-0" 
-                style={{backgroundColor:"red", maxWidth:"1000px"}}
+                style={{maxWidth:"1000px"}}
                 ref={demoRef}
             >
                 {/* {width} */}

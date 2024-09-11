@@ -329,9 +329,13 @@ a {
 }
 
 .animatronics {
-  display: block;  visibility: visible;
+  visibility: visible;
   transform: translateX(-200px);
   transition: all 0.25s;
+}
+.animations {
+  transition: all 0.25s;
+  
 }
 
 .no-more-display {
