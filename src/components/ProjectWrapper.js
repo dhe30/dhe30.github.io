@@ -10,11 +10,12 @@ import Breadish from "../components/Breadish";
 
 import useWindowSize from "../hooks/useWindowSize";
 import MenuModal from "./MenuModal";
+import { useOutletContext } from "react-router-dom";
 
 export default function ProjectWrapper({wid, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
-    const [tags, setTags] = useState(["Programming"]);
+    const [tags, setTags] = useOutletContext();
     return (
         <Container fluid className="test d-flex justify-content-center p-0 m-0 p-relative">
                 <Row className="mx-3 mx-sm-3 mx-md-4 test" style={{maxWidth:"1300px"}}>

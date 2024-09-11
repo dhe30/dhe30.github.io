@@ -361,3 +361,9 @@ a {
   /* border-right-color: white; */
   background-color: #f4b7d4;
 }
+
+.clear:hover {
+  /* color: rgb(255, 142, 142); */
+  transform: scale(1.1);
+  transition: all 0.05s ease-in-out;
+}

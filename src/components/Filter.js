@@ -18,6 +18,9 @@ function Filter({tags, setTags}) {
     const [search, setSearch] = useState("");
     const [beforeClick, setBeforeClick] = useState(false);
 
+    const handleClear = () => {
+        setTags([]);
+    }
     const removeTag = (tag) => {
         tags.splice(tags.indexOf(tag),1);
         setTags([...tags]);
@@ -112,7 +115,14 @@ function Filter({tags, setTags}) {
         <div className="mb-4" style={{width:"189px", position:"relative"}}>
             <img alt="" src={filter} className="mb-2"></img>
             <span className="inria-sans-regular" style={{fontSize:"18px"}}>Filter</span>
-            <button type="reset" style={{position:"absolute", right:"0", fontSize:"16", marginTop:"5px"}} className="ms-auto inria-sans-regular-italic unbutton">clear</button>
+            <button 
+                type="reset" 
+                style={{position:"absolute", right:"0", fontSize:"16", marginTop:"5px"}} 
+                className="ms-auto inria-sans-regular-italic unbutton clear"
+                onClick={handleClear}
+            >
+                clear
+            </button>
             <div style={{display:"flex", flexWrap:"wrap", gap:"10px"}} className="mb-3">
                 {tags.map((elem) => 
                     <GreyTag 

@@ -11,11 +11,12 @@ import Back from "./components/Back";
 import Filter from "./components/Filter";
 import useWindowSize from "./hooks/useWindowSize";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import useWheel from "./hooks/useWheel";
 
 function App() {
+  const [tags, setTags] = useState([]);
   return (
     <>
     <ScrollToTop>
@@ -24,9 +25,7 @@ function App() {
       {/* <div className="bar"><Gag></Gag></div> */}
       <Gag></Gag>
       {/* <Test></Test> */}
-
-      <Outlet/>
-      
+      <Outlet  context={[tags, setTags]}/>
     </div>
     </>
   );
