@@ -1,4 +1,5 @@
 import Crumbs from "../components/Crumbs";
+import Graphics from "../components/Graphics";
 import ProjectWrapper from "../components/ProjectWrapper";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -17,6 +18,7 @@ export default function Misc() {
             <div className="test graphics mx-auto" style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-40 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}}>
                     <div className="special-border m-1">
                         <Crumbs crumbs={["Home", "Projects", "Collections", "Graphics"]} white={true}></Crumbs>
+                        <Graphics></Graphics>
                     </div>
             </div>
         </ProjectWrapper>

@@ -291,7 +291,7 @@ a {
 
 .graphics {
   position: relative;
-  height: 1200px;
+  /* height: 1200px; */
   background-image: url("assets/vintage-pink-and-cream-dark-floral-plain-820x532\ 3.png");
 }
 
@@ -366,4 +366,27 @@ a {
   /* color: rgb(255, 142, 142); */
   transform: scale(1.1);
   transition: all 0.05s ease-in-out;
+}
+
+.glass-pane {
+  background-color: #eaeaeae2;
+}
+
+.fonty-smallest {
+  font-size: 16px;
+}
+
+.fonty-large {
+  font-size: 32px;
+}
+
+.wrap-text {
+  float:left;
+  max-width: 100%;
+  height: auto;
+}
+
+.black-diamonds {
+  font-size: 10px;
+  vertical-align:middle;
 }
