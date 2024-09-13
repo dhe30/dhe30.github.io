@@ -145,7 +145,7 @@ function Filter({tags, setTags}) {
                 <input 
                     type="text" 
                     name="search" 
-                    className={`input-sizing-color px-3 pb-1 ${showBox ? '' : 'no'}`}
+                    className={`input-sizing-color px-3 pb-1 ${showBox ? 'garuda-showdown' : 'no'}`}
                     placeholder="Add tag..."
                     onBlur={handleOnBlur}
                     onChange={handleOnChange}

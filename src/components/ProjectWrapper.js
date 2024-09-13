@@ -23,8 +23,8 @@ export default function ProjectWrapper({wid, children}) {
                 { width > 800 ?
                     <Col className="test" xs="auto" style={{width:""}}>
                         <div>
-                        {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
                         <Breadish></Breadish>
+                        {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
                         </div>
                     </Col>
                     : 
