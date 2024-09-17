@@ -5,7 +5,7 @@ import right from "../assets/Frame 29.svg";
 
 function Showcase({clientWidth}) {
     const test = [
-        {img:"map.png", caption: "10"},
+        {img:"taxitest2.png", caption: "10"},
         {img:"spoiler.png", caption: "1"},
         {img:"spoiler.png", caption: "1"},
         {img:"map.png", caption: "3"},
