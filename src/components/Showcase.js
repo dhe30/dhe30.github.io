@@ -5,11 +5,12 @@ import right from "../assets/Frame 29.svg";
 
 function Showcase({clientWidth}) {
     const test = [
-        {img:"taxitest2.png", caption: "10"},
-        {img:"spoiler.png", caption: "1"},
-        {img:"spoiler.png", caption: "1"},
-        {img:"map.png", caption: "3"},
-        {img:"taxim.png", caption: "0"},
+        {img:"Engram/EngramHome1.png", caption: "10"},
+        {img:"Engram/EngramPrompt.png", caption: "1"},
+        {img:"Engram/EngramLEQ.png", caption: "1"},
+        {img:"Engram/EngramWrite.png", caption: "3"},
+        {img:"Engram/EngramHard1.png", caption: "0"},
+        {img:"Engram/prototype.png", caption: "0"},
     ]
 
     const { width } = useWindowSize();
@@ -26,23 +27,24 @@ function Showcase({clientWidth}) {
     const [current, setCurrent] = useState(2);
     const [currentActual, setCurrentActual] = useState(0);
     const [freeze, setFreeze] = useState(false);
+    const [reset, setReset] = useState(false);
     const [loop, setLoop] = useState();
 
     function tick() {
-        savedCallback.current();
+        savedCallback ? savedCallback.current() : clearInterval(loop);
     }
 
     function resetTimer(id) {
-        clearInterval(id);
-        setLoop(setInterval(tick, 5000));
+        // clearInterval(id);
+        // setLoop(0);
     }
 
     //for confusion as to why this is needed https://overreacted.io/making-setinterval-declarative-with-react-hooks/
     useEffect(() => {
         savedCallback.current = backward;
-        // return () => {
-        //     clearInterval(loop);
-        // }
+        return () => {
+            ;
+        }
       });
 
     useEffect(() => {
@@ -51,7 +53,7 @@ function Showcase({clientWidth}) {
         return () => {
             clearInterval(id);
         }
-    }, []);
+    }, [reset]);
 
     function plus(curr, num=1) {
         return (curr+num)%(test.length);
@@ -62,7 +64,7 @@ function Showcase({clientWidth}) {
         return (curr < 0 ? test.length+(curr):curr);
     }
 
-    const forward = () => {
+    const forward = (callback=(loop)=>{}) => {
         if (!freeze) {
             setFreeze(true);
             console.log(one);
@@ -83,7 +85,9 @@ function Showcase({clientWidth}) {
             });
             setTimeout(()=> {
                 setFreeze(false);
+                setReset(!reset);
             }, 500);
+            callback(loop);
         }
     }
     const backward = (callback=(loop)=>{}) => {
@@ -107,6 +111,7 @@ function Showcase({clientWidth}) {
             setImages(images);
             setTimeout(()=> {
                 setFreeze(false);
+                setReset(!reset);
             }, 500);
             callback(loop);
         }
@@ -138,7 +143,7 @@ function Showcase({clientWidth}) {
                     <button 
                         className="unbutton" 
                         type="button" 
-                        onClick={forward}
+                        onClick={()=>{forward(resetTimer)}}
                         style={{
                             position:"absolute",
                             left:"0",
