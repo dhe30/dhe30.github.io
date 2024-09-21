@@ -10,12 +10,15 @@ import Filter from "../components/Filter";
 import Breadish from "../components/Breadish";
 
 import ProjectWrapper from "../components/ProjectWrapper";
+import ProjectCase from "../components/wrappers/ProjectCase";
 
+import data from "../data/portfolio";
 
 export default function Projects() {
     const [width, setWidth] = useState(100);
     const [height, setHeight] = useState(100);
     const demoRef = useRef();
+    // const datar = JSON.parse(data);
   
     useEffect(() => {
       const resizeObserver = new ResizeObserver((event) => {
@@ -31,6 +34,7 @@ export default function Projects() {
     }, [demoRef]);
 
     return (
+        //NOTES: fix grey tag, shift scdescriptor down 
         <ProjectWrapper wid={1025} s>
             <Crumbs crumbs={["Home", "Projects", "Collections", "WebDev"]}></Crumbs>
             <Row 
@@ -39,15 +43,13 @@ export default function Projects() {
                 ref={demoRef}
             >
                 {/* {width} */}
-                <Col className="pb-4" xs="auto">
-                    <Col className="" style={{maxWidth:"550px"}} xs="12">
-                        <Keywords keywords={["Code", "Code2"]}></Keywords>
-                    </Col>
-                    <Showcase clientWidth={width-50}></Showcase>
-                </Col>
-                <Col className="" style={{minWidth:"250px", maxWidth:"550px"}}>
-                    <Scdescriptor></Scdescriptor>
-                </Col>
+                {data.collections.webdev.projects.map((elem) => {
+                    return (
+                        <ProjectCase width={width} tags={elem.tags} title={elem.title}>
+
+                        </ProjectCase>
+                    )
+                })}
             </Row>
         </ProjectWrapper>
     )

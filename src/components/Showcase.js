@@ -3,8 +3,8 @@ import useWindowSize from "../hooks/useWindowSize";
 import left from "../assets/Frame 28.svg";
 import right from "../assets/Frame 29.svg";
 
-function Showcase({clientWidth}) {
-    const test = [
+function Showcase({clientWidth, imagers}) {
+    const test = imagers || [
         {img:"Engram/EngramHome1.png", caption: "10"},
         {img:"Engram/EngramPrompt.png", caption: "1"},
         {img:"Engram/EngramLEQ.png", caption: "1"},

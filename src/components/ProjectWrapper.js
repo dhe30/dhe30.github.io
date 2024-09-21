@@ -11,17 +11,21 @@ import Breadish from "../components/Breadish";
 import useWindowSize from "../hooks/useWindowSize";
 import MenuModal from "./MenuModal";
 import { useOutletContext } from "react-router-dom";
+import { QueryContext, TagContext } from "../store/TagContext";
 
 export default function ProjectWrapper({wid, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
     const [tags, setTags] = useOutletContext();
+
+    const context = {tags: tags};
+
     return (
         <Container fluid className="test d-flex justify-content-center p-0 m-0 p-relative">
                 <Row className="mx-3 mx-sm-3 mx-md-4 test" style={{maxWidth:"1300px"}}>
                 <Back></Back> 
                 { width > 800 ?
-                    <Col className="test" xs="auto" style={{width:""}}>
+                    <Col className="test" xs="auto" style={{minWidth:"170px"}}>
                         <div>
                         <Breadish></Breadish>
                         {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
@@ -32,9 +36,11 @@ export default function ProjectWrapper({wid, children}) {
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     </div>
                 }
-                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - 400 + "px":width - 250 + "px":""}`}}>
+                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - 415 + "px":width - 250 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
-                    {children}
+                    <TagContext.Provider value={context}>
+                        {children}
+                    </TagContext.Provider>
                 </Col>
                 {width >= wid && 
                     <Col xs="auto" className="test">

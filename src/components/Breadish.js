@@ -33,7 +33,7 @@ function Breadish({bread = {"Collections" : ["collectionitem1", "collectionitem2
                         <Accordion.Collapse eventKey={index} className='' style={{width:"fit-content"}}>
                             <ul className='' style={{marginBottom:"0px"}}>
                             {bread[item].map((elem) => {
-                                return(<li className=''><button className='unbutton breadlet test'>{elem}</button></li>)
+                                return(<li className=''><button className='unbutton breadlet test'>{"> "}{elem}</button></li>)
                             })}
                             </ul>
                         </Accordion.Collapse>

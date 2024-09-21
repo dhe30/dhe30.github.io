@@ -1,0 +1,110 @@
+{
+    "collections": {
+        "webdev": {
+            "thumbnail": "taxim.png",
+            "projects": [
+                {
+                    "title": "Taxism",
+                    "repo":"https://github.com/jus910/NoseDamage",
+                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL"],
+                    "date": "2012-04-23T18:25:43.511Z",
+                    "description": "", 
+                    "images": [
+                        {
+                            "img": "mapdots.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "mapdots.png",
+                            "caption": ""
+                        }
+                    ]
+
+                },
+                {
+                    "title": "Engram Writing Tool",
+                    "repo":"https://github.com/jus910/NoseDamage",
+                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL"],
+                    "date": "2012-04-23T18:25:43.511Z",
+                    "description": "", 
+                    "images": [
+                        {
+                            "img": "EngramHome1.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "EngramPrompt.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "EngramLEQ.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "EngramWrite.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "EngramHard1.png",
+                            "caption": ""
+                        },
+                        {
+                            "img": "prototype.png",
+                            "caption": ""
+                        }
+                    ]
+
+                }
+            ]
+        },
+        "graphics":{
+            "projects": [
+                {
+                    "title": "Taxism, interactive taxi database visualizer",
+                    "repo":"https://github.com/jus910/NoseDamage",
+                    "tags": ["Java"],
+                    "date": "2012-04-23T18:25:43.511Z",
+                    "description": "", 
+                    "images": [
+                        {
+                            "url": "lines.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "matrix.gif",
+                            "caption": ""
+                        },
+                        {
+                            "url": "test1.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "miku.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "balls.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "gateway.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "pumpkin.png",
+                            "caption": ""
+                        },
+                        {
+                            "url": "360.png",
+                            "caption": ""
+                        }
+                    ]
+
+                }
+            ]
+        },
+        "softdev":{
+
+        }
+    }
+}
