@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -147,7 +147,11 @@ li:not(:last-child) {
   font-weight: 400;
   font-style: normal;
 }
-
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .inria-sans-regular-italic {
   font-family: "Inria Sans", sans-serif;
   font-weight: 400;
@@ -308,14 +312,14 @@ a {
   padding: 0;
   position: absolute;
   top: 40px;
-  right: 0;
+  right: -15px;
   /* width: 20px !important;
   height: 40px; */
 }
 
 .modal-div {
   position: sticky;
-  top: 55px;
+  top: 50px;
   left: 95vw;
   z-index: 10;
   /* padding: 0; */
@@ -360,13 +364,16 @@ a {
   position: absolute;
   top: 5px;
   left: -30px;
+}
+
+.modal-close-shape {
   width: 30px;
   height: 60px;
   padding: 0;
   border-radius: 10px 0 0 10px;
   /* border: 1px solid black; */
   /* border-right-color: white; */
-  background-color: #f4b7d4;
+  background-color: #DB96F3;
 }
 
 .clear:hover {
@@ -382,7 +389,9 @@ a {
 .fonty-smallest {
   font-size: 16px;
 }
-
+.fonty-good-size {
+  font-size: 24px !important;
+}
 .fonty-large {
   font-size: 32px;
 }
@@ -396,4 +405,17 @@ a {
 .black-diamonds {
   font-size: 10px;
   vertical-align:middle;
+}
+
+.menu-small-seriousness {
+  fill: #CB7AE0 !important;
+  transform: scale(1.1);
+}
+
+.menu-small {
+  transition: all 0.15s;
+}
+.menu-small:hover {
+  fill: #DB96F3;
+  transform: scale(1.1);
 }

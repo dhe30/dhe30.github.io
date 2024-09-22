@@ -13,7 +13,7 @@ import MenuModal from "./MenuModal";
 import { useOutletContext } from "react-router-dom";
 import { QueryContext, TagContext } from "../store/TagContext";
 
-export default function ProjectWrapper({wid, children}) {
+export default function ProjectWrapper({wid, restrictionAbove1025,children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
     const [tags, setTags] = useOutletContext();
@@ -32,11 +32,11 @@ export default function ProjectWrapper({wid, children}) {
                         </div>
                     </Col>
                     : 
-                    <div className="" style={{position:"absolute", top:"55px", height:"100%"}}>
+                    // <div className="" style={{position:"absolute", top:"55px", height:"100%"}}>
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
-                    </div>
+                    // </div>
                 }
-                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - 415 + "px":width - 250 + "px":""}`}}>
+                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
                     <TagContext.Provider value={context}>
                         {children}

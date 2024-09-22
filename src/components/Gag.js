@@ -7,6 +7,7 @@ import useWindowSize from '../hooks/useWindowSize';
 import useWheel from '../hooks/useWheel';
 import useFetch from '../hooks/useFetch';
 import { NavbarCollapse } from 'react-bootstrap';
+import SmallMenu from './SmallMenu';
 function Gag() {
 
     const [date, setDate] = useState(new Date(Date.now()));
@@ -45,13 +46,20 @@ function Gag() {
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
             <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
                 <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
-                   <span className='headings'> FirstName LastName </span>
+                   <span className='headings'> Daniel LastName </span>
                 </Navbar.Brand>
-                <Nav className='bar-bar-bar justify-content-left'>
-                     {/*decrease text size around 750 px client width*/}
-                    <Nav.Link className={`nav-link ${highlight == "Projects" ? "highlight" : ""}`} onClick={() => {setHighlight("Projects")}}>Projects</Nav.Link>
-                    <Nav.Link className={`nav-link ${highlight == "Notes" && "highlight"}`} onClick={() => {setHighlight("Notes")}}>Notes</Nav.Link>
-                </Nav>
+                    <Nav className='bar-bar-bar justify-content-left'>
+                            {/*decrease text size around 750 px client width*/}
+                        {width > 595 ? 
+                                <Nav.Link className={`nav-link ${highlight == "Notes" && "highlight"}`} onClick={() => {setHighlight("Notes")}}>Resume</Nav.Link>
+                                :
+                                <SmallMenu isNavEvenHereInTheFirstPlace={showNav} highlight={highlight} setHighlight={setHighlight}></SmallMenu>
+                        }
+                        {width > 730 && 
+                            <Nav.Link className={`nav-link ${highlight == "Projects" ? "highlight" : ""}`} onClick={() => {setHighlight("Projects")}}>Projects</Nav.Link>
+                        }
+                        
+                    </Nav>
                 {width > 1200 && // 1200
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>

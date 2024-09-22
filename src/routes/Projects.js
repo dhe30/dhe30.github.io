@@ -45,9 +45,10 @@ export default function Projects() {
                 {/* {width} */}
                 {data.collections.webdev.projects.map((elem) => {
                     return (
-                        <ProjectCase width={width} tags={elem.tags} title={elem.title}>
-
-                        </ProjectCase>
+                        <Row className="p-0 m-0 mb-5">
+                            <ProjectCase width={width} tags={elem.tags} title={elem.title}>
+                            </ProjectCase>
+                        </Row>
                     )
                 })}
             </Row>

@@ -4,7 +4,7 @@ function Crumbs({crumbs, white}) {
     const test = crumbs || ["Home", "Projects", "Collections"];
     return (
         <div className="mb-5">
-            <span className="crumbs jetbrains-mono-yuh" style={{fontSize: "24px", color:`${white?"white":""}`}}>
+            <span className="crumbs jetbrains-mono-yuh" style={{fontSize: "18px", color:`${white?"white":""}`}}>
                 {test.map((elem, index) => {
                     return (
                         index < test.length-1 && <span style={{display:"inline-block"}}>{elem} <img src={white? whiteRight: right} alt="" style={{margin: "0 6px 5px -7px"}}></img></span>

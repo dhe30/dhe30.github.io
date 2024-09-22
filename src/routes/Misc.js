@@ -2,12 +2,14 @@ import Crumbs from "../components/Crumbs";
 import Graphics from "../components/Graphics";
 import ProjectWrapper from "../components/ProjectWrapper";
 import useWindowSize from "../hooks/useWindowSize";
-
+import data from "../data/portfolio";
+import { Row } from "react-bootstrap";
+ 
 export default function Misc() {
     const { width } = useWindowSize();
     const selfStarter = 1325;
     return (
-        <ProjectWrapper wid={1200}>
+        <ProjectWrapper wid={1200} restrictionAbove1025={1}>
             {/* <div className="test graphics mx-auto" style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-60 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}}>
                 <div className="test graphics" style={{position:"absolute", width:`${width < 810 ? width+2 +"px": "100%"}`, height:"500px", marginLeft:`${width < 810 ? "-32px": ""}`}}>
                     <div className="special-border m-1">
@@ -15,10 +17,19 @@ export default function Misc() {
                     </div>
                 </div>
             </div> */}
-            <div className="test graphics mx-auto" style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-40 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}}>
+            {/* style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-40 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}} */}
+            <div className="test graphics mx-auto" style={{maxWidth:"875px"}}>
                     <div className="special-border m-1">
                         <Crumbs crumbs={["Home", "Projects", "Collections", "Graphics"]} white={true}></Crumbs>
-                        <Graphics></Graphics>
+                        {
+                            data.collections.graphics.projects.map((elem) => {
+                                return (
+                                    <Row className="p-0 m-0 my-5">
+                                        <Graphics image={elem.images[0].url}></Graphics>
+                                    </Row>
+                                )
+                            })
+                        }
                     </div>
             </div>
         </ProjectWrapper>
