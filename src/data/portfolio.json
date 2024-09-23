@@ -58,6 +58,7 @@
             ]
         },
         "graphics":{
+            "thumbnail":"T4780203 1.png",
             "projects": [
                 {
                     "title": "Taxism, interactive taxi database visualizer",
@@ -151,9 +152,6 @@
                     ]
                 }
             ]
-        },
-        "softdev":{
-
         }
     }
 }

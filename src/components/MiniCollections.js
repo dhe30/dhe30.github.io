@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import '../index.css';
 import arrow from "../assets/rightarrow.svg";
-function MiniCollections() {
+function MiniCollections({title}) {
     return (
         <Row className="pt-5 test">
             <Col className="test pb-3" xs="auto" style={{position:"relative"}}>
@@ -19,7 +19,7 @@ function MiniCollections() {
             <Col style={{maxWidth:"434px"}}>
                 <span className="test istok-web-regular" style={{display: "block"}}>
                     <h2 className="test me-2 inria-sans-regular" style={{display: "inline-block", fontSize: "24px"}}>March 2017</h2>
-                    <h1 className="test" style={{display: "inline-block", fontSize: "32px"}}><span className="me-2">Project One</span>
+                    <h1 className="test" style={{display: "inline-block", fontSize: "32px"}}><span className="me-2">{title || "Project One"}</span>
                     <img 
                         className="test" 
                         alt="" 

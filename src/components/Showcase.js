@@ -19,7 +19,7 @@ function Showcase({clientWidth, imagers}) {
     const three = useRef([]);
     const four = useRef([]);
     const savedCallback = useRef();
-    const limit = 1235;
+    const limit = 1260;
     const heightRatio = 370;
 
     const [one,setOne] = useState([two,three,four]);
