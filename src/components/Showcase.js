@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import left from "../assets/Frame 28.svg";
 import right from "../assets/Frame 29.svg";
+import ShowcaseModal from "./ShowcaseModal";
 
 function Showcase({clientWidth, imagers}) {
     const test = imagers || [
@@ -28,15 +29,10 @@ function Showcase({clientWidth, imagers}) {
     const [currentActual, setCurrentActual] = useState(0);
     const [freeze, setFreeze] = useState(false);
     const [reset, setReset] = useState(false);
-    const [loop, setLoop] = useState();
+    const [show, setShow] = useState(false);
 
     function tick() {
-        savedCallback ? savedCallback.current() : clearInterval(loop);
-    }
-
-    function resetTimer(id) {
-        // clearInterval(id);
-        // setLoop(0);
+        savedCallback.current();
     }
 
     //for confusion as to why this is needed https://overreacted.io/making-setinterval-declarative-with-react-hooks/
@@ -49,7 +45,6 @@ function Showcase({clientWidth, imagers}) {
 
     useEffect(() => {
         const id = setInterval(tick, 5000);
-        setLoop(id);
         return () => {
             clearInterval(id);
         }
@@ -64,7 +59,7 @@ function Showcase({clientWidth, imagers}) {
         return (curr < 0 ? test.length+(curr):curr);
     }
 
-    const forward = (callback=(loop)=>{}) => {
+    const forward = () => {
         if (!freeze) {
             setFreeze(true);
             console.log(one);
@@ -87,10 +82,9 @@ function Showcase({clientWidth, imagers}) {
                 setFreeze(false);
                 setReset(!reset);
             }, 500);
-            callback(loop);
         }
     }
-    const backward = (callback=(loop)=>{}) => {
+    const backward = () => {
         if (!freeze) {
             setFreeze(true);
             setCurrent((current + 1)%3);
@@ -113,8 +107,14 @@ function Showcase({clientWidth, imagers}) {
                 setFreeze(false);
                 setReset(!reset);
             }, 500);
-            callback(loop);
         }
+    }
+
+    const handleClose = () => {
+        setShow(false);
+    }
+    const handleShow = () => {
+        setShow(true);
     }
     return (
         <div className="" style={{position:"relative"}}>
@@ -130,7 +130,7 @@ function Showcase({clientWidth, imagers}) {
                      <button 
                         className="unbutton" 
                         type="button" 
-                        onClick={()=>{backward(resetTimer)}}
+                        onClick={backward}
                         style={{
                             position:"absolute",
                             right:"0",
@@ -143,7 +143,7 @@ function Showcase({clientWidth, imagers}) {
                     <button 
                         className="unbutton" 
                         type="button" 
-                        onClick={()=>{forward(resetTimer)}}
+                        onClick={forward}
                         style={{
                             position:"absolute",
                             left:"0",
@@ -165,6 +165,7 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[0]].img}`)}
                         ref={two}
+                        onClick={handleShow}
                     ></img>  
                     <img 
                         alt="" 
@@ -178,6 +179,7 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[1]].img}`)}
                         ref={three}
+                        onClick={handleShow}
                     ></img>  
                     <img 
                         alt="" 
@@ -191,7 +193,9 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[2]].img}`)}
                         ref={four}
-                    ></img>  
+                        onClick={handleShow}
+                    ></img> 
+                    <ShowcaseModal show={show} handleClose={handleClose} image={test[currentActual]}></ShowcaseModal> 
                 </div>
                 {/* <div>{test[curr].caption}</div> */}
             <div className="position-relative mt-2" style={{minHeight:"109px", textAlign:"center", fontSize:"12px", border:"1px solid #D5D5D5"}}>

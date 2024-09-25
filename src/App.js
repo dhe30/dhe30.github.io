@@ -21,7 +21,7 @@ function App() {
     <>
     <ScrollToTop>
     </ScrollToTop>
-    <div>
+    <div className="p-0 m-0">
       {/* <div className="bar"><Gag></Gag></div> */}
       <Gag></Gag>
       {/* <Test></Test> */}
