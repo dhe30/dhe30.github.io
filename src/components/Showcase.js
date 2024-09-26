@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
-import left from "../assets/Frame 28.svg";
-import right from "../assets/Frame 29.svg";
+import {ReactComponent as Left} from "../assets/Frame 28.svg";
+import {ReactComponent as Right} from "../assets/Frame 29.svg";
+import {ReactComponent as Arrow} from "../assets/reshot-icon-head-down-left-J2RDS78GBL.svg";
 import ShowcaseModal from "./ShowcaseModal";
+
 
 function Showcase({clientWidth, imagers}) {
     const test = imagers || [
@@ -30,6 +32,7 @@ function Showcase({clientWidth, imagers}) {
     const [freeze, setFreeze] = useState(false);
     const [reset, setReset] = useState(false);
     const [show, setShow] = useState(false);
+    const [expand, setExpand] = useState(false);
 
     function tick() {
         savedCallback.current();
@@ -60,7 +63,7 @@ function Showcase({clientWidth, imagers}) {
     }
 
     const forward = () => {
-        if (!freeze) {
+        if (!(freeze || show)) {
             setFreeze(true);
             console.log(one);
             setCurrent(current - 1 < 0? 2: current-1);
@@ -85,7 +88,7 @@ function Showcase({clientWidth, imagers}) {
         }
     }
     const backward = () => {
-        if (!freeze) {
+        if (!(freeze || show)) {
             setFreeze(true);
             setCurrent((current + 1)%3);
             setCurrentActual((currentActual + 1)%test.length);
@@ -116,6 +119,12 @@ function Showcase({clientWidth, imagers}) {
     const handleShow = () => {
         setShow(true);
     }
+    const handleMouseEnter = () => {
+        setExpand(true);
+    }
+    const handleMouseLeave = () => {
+        setExpand(false);
+    }
     return (
         <div className="" style={{position:"relative"}}>
             {/* {clientWidth} */}
@@ -126,35 +135,73 @@ function Showcase({clientWidth, imagers}) {
                         width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
                         height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                     }}
+                    
                 >
-                     <button 
-                        className="unbutton" 
-                        type="button" 
-                        onClick={backward}
-                        style={{
-                            position:"absolute",
-                            right:"0",
-                            top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
-                            zIndex: "1"
-                        }}
+                <div 
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleShow}
+                    style={{position:"absolute", zIndex:"1", height:"100%", width:"64%", left:"18%"}}>
+                </div>
+
+                    <button 
+                        className="robert unbutton" 
+                        type="button"
+                        style={{position:"absolute", zIndex:"1", height:"100%", width:"18%"}}
+                        onClick={forward}
                     >
-                        <img src={left}></img>
+                        
+                        <button 
+                            className="unbutton" 
+                            type="button" 
+                            style={{
+                                position:"absolute",
+                                left:"0",
+                                top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
+                                zIndex: "1"
+                            }}
+                        >
+                            <Right className="despica"></Right>
+                        </button>
                     </button>
                     <button 
-                        className="unbutton" 
+                        className="roberta unbutton" 
                         type="button" 
-                        onClick={forward}
-                        style={{
-                            position:"absolute",
-                            left:"0",
-                            top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
-                            zIndex: "1"
-                        }}
+                        style={{position:"absolute", right: 0, zIndex:"1", height:"100%", width:"18%"}}
+                        onClick={backward}
                     >
-                        <img src={right}></img>
+                        <button 
+                            className="unbutton" 
+                            type="button" 
+                            style={{
+                                position:"absolute",
+                                right:"0",
+                                top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
+                                zIndex: "1"
+                            }}
+                        >
+                            <Left className="despica" />
+                        </button>
                     </button>
+                     
+                    
+                    {/* <Arrow 
+                        
+                        style={{position:"absolute", zIndex:"1", top:"0", bottom:"0"}}
+                    ></Arrow> */}
+                    <Arrow 
+                        height={40}
+                        width={40}
+                        className={`down-arrow expand-animation ${expand && "expand-anima-down"}`}
+                    ></Arrow>
+                    <Arrow 
+                        height={40}
+                        width={40}
+                        className={`up-arrow expand-animation ${expand && "expand-anima-up"}`}
+                    ></Arrow>
                     <img 
                         alt="" 
+                        className="showcase-image"
                         style={{
                             objectFit: "cover",
                             width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
@@ -165,10 +212,10 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[0]].img}`)}
                         ref={two}
-                        onClick={handleShow}
                     ></img>  
                     <img 
                         alt="" 
+                        className="showcase-image"
                         style={{
                             objectFit: "cover",
                             width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
@@ -179,10 +226,10 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[1]].img}`)}
                         ref={three}
-                        onClick={handleShow}
                     ></img>  
                     <img 
                         alt="" 
+                        className="showcase-image"
                         style={{
                             objectFit: "cover",
                             width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
@@ -193,12 +240,11 @@ function Showcase({clientWidth, imagers}) {
                         }} 
                         src={require(`../assets/${test[images[2]].img}`)}
                         ref={four}
-                        onClick={handleShow}
                     ></img> 
                     <ShowcaseModal show={show} handleClose={handleClose} image={test[currentActual]}></ShowcaseModal> 
                 </div>
                 {/* <div>{test[curr].caption}</div> */}
-            <div className="position-relative mt-2" style={{minHeight:"109px", textAlign:"center", fontSize:"12px", border:"1px solid #D5D5D5"}}>
+            <div className="position-relative mt-2 showcase-image" style={{minHeight:"109px", textAlign:"center", fontSize:"12px", border:"1px solid #D5D5D5"}}>
                 <span className="d-block pt-3 inter-love">{test[currentActual].caption}</span>
                 <div className="position-absolute" style={{bottom:"0", left:"50%", transform: "translate(-50%, -50%)"}}>
                     {[...Array(test.length).keys()].map((elem) => {

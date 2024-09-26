@@ -415,6 +415,7 @@ a {
 .menu-small {
   transition: all 0.15s;
 }
+
 .menu-small:hover {
   fill: #DB96F3;
   transform: scale(1.1);
@@ -449,3 +450,47 @@ a {
   /* max-height: 100vh; */
   /* margin-left: auto; */
 }
+
+.up-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  rotate: 180deg;
+  opacity: 0; 
+  /* fill: #CB7AE0;  */
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+  opacity: 0;  
+  /* fill: #CB7AE0;  */
+
+}
+.expand-animation {
+  transition: all 0.20s ease-in;
+}
+
+.expand-anima-up {
+  opacity: 1;  
+  transform: translateX(-1rem) translateY(1rem);
+}
+
+.expand-anima-down {
+  opacity: 1;  
+  transform: translateX(-1rem) translateY(1rem);
+}
+
+.robert:hover {
+  /* background-color: red; */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+}
+
+.roberta:hover {
+  /* background-color: red; */
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent);
+}
+
