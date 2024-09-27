@@ -8,7 +8,7 @@ function Filter({tags, setTags}) {
         console.log(`destroy ${tag}`);
     }
 
-    const wordBank = ["React.js", "Java", "JavaScript"];
+    const wordBank = ["React.js", "Java", "JavaScript", "firebase", "skills"];
     const [resultsClicked, setResultsClicked] = useState(false);
     const [tagsClicked, setTagsClicked] = useState(false);
     const [showBox, setShowBox] = useState(false);

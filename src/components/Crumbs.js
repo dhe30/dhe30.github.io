@@ -3,7 +3,7 @@ import whiteRight from "../assets/icon _right_.svg";
 function Crumbs({crumbs, white}) {
     const test = crumbs || ["Home", "Projects", "Collections"];
     return (
-        <div className="mb-5">
+        <div className="">
             <span className="crumbs jetbrains-mono-yuh" style={{fontSize: "18px", color:`${white?"white":""}`}}>
                 {test.map((elem, index) => {
                     return (

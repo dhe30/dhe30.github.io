@@ -5,7 +5,7 @@ import Scdescriptor from "../Scdescriptor";
 
 export default function ProjectCase({width, imagers, tags, description, title}) {
     return (
-        <Row className="p-0 m-0">
+        <Row className="p-0 m-0 mt-5">
                                 <Keywords keywords={tags}></Keywords>
             <Col className="pb-4" xs="auto">
                 {/* <Col className="" style={{maxWidth:"550px"}} xs="12">

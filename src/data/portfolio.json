@@ -6,7 +6,7 @@
                 {
                     "title": "Taxism",
                     "repo":"https://github.com/jus910/NoseDamage",
-                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL"],
+                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL", "skills"],
                     "date": "2012-04-23T18:25:43.511Z",
                     "description": "", 
                     "images": [
@@ -24,8 +24,8 @@
                 {
                     "title": "Engram Writing Tool",
                     "repo":"https://github.com/jus910/NoseDamage",
-                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL"],
-                    "date": "2012-04-23T18:25:43.511Z",
+                    "tags": ["pandas", "python", "flask", "JavaScript", "SQL", "firebase"],
+                    "date": "2019-04-23T18:25:43.511Z",
                     "description": "", 
                     "images": [
                         {

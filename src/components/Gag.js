@@ -41,7 +41,7 @@ function Gag() {
     return (
         <Navbar className={`prevent-select nav-trans inter-love ${showNav? 'nav-mask-show' : pos > 90? 'nav-mask-hide': 'nav-mask-show'}`} 
         sticky="top"
-        style={{backgroundColor:"white", opacity:"0.8"}}
+        style={{backgroundColor:"rgb(255,255,255)", opacity: 0.8}}
         >
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
             <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>

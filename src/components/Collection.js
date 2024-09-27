@@ -5,7 +5,7 @@ import GreyTag from "./GreyTag";
 import { Link } from "react-router-dom";
 function Collection({title, image}) {
     return (
-        <Row>
+        <Row className="pt-5">
             <Col className="test pb-3" xs="auto">
                     <img 
                         alt="" 
@@ -18,7 +18,7 @@ function Collection({title, image}) {
                         src={require(`../assets/${image || "taxim.png"}`)}></img>
             </Col>
             <Col style={{minWidth:"300px"}}>
-                <Link to="/webdev" preventScrollReset={true}>
+                <Link to={title.toLowerCase() || "/"} preventScrollReset={true}>
                 <span className="test istok-web-regular" style={{display: "block"}}>
                     <h1 className="test me-2" style={{display: "inline-block"}}>{title || "SoftDev"}</h1>
                     <img 

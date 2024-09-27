@@ -75,7 +75,7 @@ code {
 .nav-link {
   font-size: 32px !important;
   font-weight: 300;
-  color: white !important;
+  color: rgba(255, 255, 255, 255) !important;
   /* -webkit-text-stroke: 0.2px #CB7AE0; */
   text-shadow:
     -0.5px -0.5px 0 #CB7AE0,
@@ -313,8 +313,10 @@ a {
   position: absolute;
   top: 40px;
   right: -15px;
-  /* width: 20px !important;
-  height: 40px; */
+  border-radius: 15px;
+  background-color: #CB7AE0;
+  width: 40px !important;
+  height: 40px;
 }
 
 .modal-div {
@@ -344,7 +346,6 @@ a {
 }
 .animations {
   transition: all 0.25s;
-  
 }
 .testColor {
   /* border: 2px solid #f4b7d4; */
@@ -493,4 +494,9 @@ a {
   /* background-color: red; */
   background: linear-gradient(to left, rgba(0, 0, 0, 0.08), transparent);
 }
-
+.expansionist {
+  transition: transform 0.15s;
+}
+.expansionist:hover {
+  transform: scale(1.1);
+}

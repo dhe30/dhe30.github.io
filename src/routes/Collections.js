@@ -12,12 +12,11 @@ export default function Collections() {
             {
                 Object.keys(data.collections).map((elem) => {
                     const projects = data.collections[elem];
-                    
                     const rand = Math.floor(Math.random()*projects.projects.length);
                     return (
                         <>
                         <Collection title={elem} image={projects.thumbnail}></Collection>
-                        <div className="ps-4 mx-auto" style={{borderLeft:"3px dashed black", width:"fit-content"}}>
+                        <div className=" test ps-4 mx-auto mb-5" style={{borderLeft:"3px dashed black", width:"fit-content"}}>
                            { [0,1].map((elem,index) => {
                                 const project = projects.projects[(rand+index)%projects.projects.length]
                                 return <MiniCollections title={project.title}></MiniCollections>

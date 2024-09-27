@@ -13,12 +13,41 @@ import ProjectWrapper from "../components/ProjectWrapper";
 import ProjectCase from "../components/wrappers/ProjectCase";
 
 import data from "../data/portfolio";
+import { useOutletContext } from "react-router-dom";
 
 export default function Projects() {
     const [width, setWidth] = useState(100);
     const [height, setHeight] = useState(100);
+    const [tags, setTags] = useOutletContext();
+    const [projetcs, setProjetcs] = useState(data.collections.webdev.projects);
+
     const demoRef = useRef();
-    // const datar = JSON.parse(data);
+
+    function comparator(a, b) {
+        const hasa = a.tags.some((el) => tags.includes(el));
+        const hasb = b.tags.some((el) => tags.includes(el));
+        console.log(hasa, hasb);
+        if (hasa && !hasb) {
+            console.log("a")
+            return -1;
+        } else if (!hasa && hasb) {
+            console.log("b")
+            return 1;
+        } else {
+            console.log("aaaaaa");
+            const datea = new Date(a.date);
+            const dateb = new Date(b.date);
+            if (datea > dateb) {
+                console.log("c")
+                return -1;
+            } else if (datea < dateb) {
+                console.log("d")
+                return 1;
+                
+            }
+            return NaN;
+        }
+    }
   
     useEffect(() => {
       const resizeObserver = new ResizeObserver((event) => {
@@ -33,6 +62,15 @@ export default function Projects() {
       }
     }, [demoRef]);
 
+    useEffect(() => {
+        // projetcs.sort(comparator);
+        // console.log(projetcs);
+        setProjetcs((projetcs) => projetcs.toSorted(comparator));
+    }, [tags])
+    useEffect(() => {
+        // console.log(projetcs);
+        setProjetcs((projetcs) => projetcs.toSorted(comparator));
+    }, [])
     return (
         //NOTES: fix grey tag, shift scdescriptor down 
         <ProjectWrapper wid={1025} s>
@@ -42,10 +80,11 @@ export default function Projects() {
                 style={{maxWidth:"1000px"}}
                 ref={demoRef}
             >
-                {/* {width} */}
+                {/* {tags.map((elem) => "susu"+elem)} */}
+                {/* {JSON.stringify(projetcs)} */}
                 {data.collections.webdev.projects.map((elem) => {
                     return (
-                        <Row className="p-0 m-0 mb-5 pb-5">
+                        <Row className="p-0 m-0 mb-5">
                             <ProjectCase width={width} tags={elem.tags} title={elem.title}>
                             </ProjectCase>
                         </Row>
