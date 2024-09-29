@@ -1,7 +1,7 @@
 import Crumbs from "../components/Crumbs";
 import Collection from "../components/Collection";
 import MiniCollections from "../components/MiniCollections";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 import Back from "../components/Back";
@@ -12,23 +12,28 @@ import useWindowSize from "../hooks/useWindowSize";
 import MenuModal from "./MenuModal";
 import { useOutletContext } from "react-router-dom";
 import { QueryContext, TagContext } from "../store/TagContext";
+import ScrollAnimator from "./wrappers/ScrollAnimator";
 
-export default function ProjectWrapper({wid, restrictionAbove1025,children}) {
+export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
     const [tags, setTags] = useOutletContext();
+    const [loading, setLoading] = useState(true);
+    const wither = useRef();
+    // useEffect(() => {
 
-    const context = {tags: tags};
-
+    // }, [])
     return (
-        <Container fluid className="test d-flex justify-content-center p-0 m-0 p-relative">
-                <Row className="mx-3 mx-sm-3 mx-md-4 test" style={{maxWidth:"1300px"}}>
+        <Container fluid className=" d-flex justify-content-center p-0 m-0 p-relative">
+                <Row className=" test mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
                 <Back></Back> 
                 { width > 800 ?
-                    <Col className="test" xs="auto" style={{minWidth:"170px"}}>
-                        <div>
+                    <Col className="position-relative" xs="auto" style={{minWidth:"170px"}}>
+                        <div className="sticky-top" style={{top:"1rem"}}>
+                        {/* <ScrollAnimator delay={0.25}> */}
                         <Breadish></Breadish>
                         {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
+                        {/* </ScrollAnimator> */}
                         </div>
                     </Col>
                     : 
@@ -36,15 +41,20 @@ export default function ProjectWrapper({wid, restrictionAbove1025,children}) {
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     // </div>
                 }
-                <Col className="test" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}`}}>
+                <Col ref={wither} className="" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
-                    <TagContext.Provider value={context}>
+                {wither.current && wither.current.offsetWidth +"\n" + `${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}` + "\n"}
                         {children}
-                    </TagContext.Provider>
                 </Col>
                 {width >= wid && 
-                    <Col xs="auto" className="test">
-                    <Filter tags={tags} setTags={setTags}></Filter>
+                    <Col xs="auto" className="position-relative">
+                        <div className="sticky-top p-0 m-0" style={{top:"1rem"}} >
+
+                        {/* <ScrollAnimator delay={0.25}> */}
+                                <Filter tags={tags} setTags={setTags}></Filter>
+                        {/* </ScrollAnimator> */}
+                        </div>
+
                     </Col>
                 }
                 </Row>

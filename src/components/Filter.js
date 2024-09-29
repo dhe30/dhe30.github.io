@@ -155,7 +155,7 @@ function Filter({tags, setTags}) {
                 ></input>
             </form>    
             {(showBox && results && search.length > 0 && isFocused) &&
-                <div style={{position:"absolute"}}>
+                <div>
                     {
                     results.map((elem) => {
                     return (

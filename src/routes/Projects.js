@@ -82,7 +82,7 @@ export default function Projects() {
             >
                 {/* {tags.map((elem) => "susu"+elem)} */}
                 {/* {JSON.stringify(projetcs)} */}
-                {data.collections.webdev.projects.map((elem) => {
+                {projetcs.map((elem) => {
                     return (
                         <Row className="p-0 m-0 mb-5">
                             <ProjectCase width={width} tags={elem.tags} title={elem.title}>

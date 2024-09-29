@@ -44,14 +44,13 @@ code {
 .nav-mask-show {
   -webkit-mask-image: linear-gradient(black 99%, transparent);
   mask-image: linear-gradient(black 99%, transparent);
-  mask-position: 0 0;
+  mask-position: 0 0px;
 
 }
 .nav-mask-hide {
   -webkit-mask-image: linear-gradient(black 50%, transparent);
   mask-image: linear-gradient(black 50%, transparent);
-  mask-position: 0 -90px;  
-  
+  mask-position: 0 -50vh;  
 }
 
 .nav-trans {

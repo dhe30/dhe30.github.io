@@ -1,7 +1,15 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function Graphics({image, title, date, description}) {
+    useEffect(() => {
+        setTimeout(()=>{
+            window.dispatchEvent(new Event('resize'))
+        }, 1)
+
+
+        // console.log("sjiwbudbyebdy")
+    },[])
     const width = useRef();
     return (
         <Container className="m-0">

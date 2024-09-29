@@ -14,6 +14,7 @@ import useWindowSize from "./hooks/useWindowSize";
 import { Outlet, useOutletContext } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import useWheel from "./hooks/useWheel";
+import ScrollAnimator from "./components/wrappers/ScrollAnimator";
 
 function App() {
   const [tags, setTags] = useState([]);
@@ -23,7 +24,9 @@ function App() {
     </ScrollToTop>
     <div className="p-0 m-0">
       {/* <div className="bar"><Gag></Gag></div> */}
-      <Gag></Gag>
+      {/* <ScrollAnimator fixer={{position: "sticky", top: "0"}}> */}
+        <Gag></Gag>
+      {/* </ScrollAnimator> */}
       {/* <Test></Test> */}
       <Outlet  context={[tags, setTags]}/>
     </div>
