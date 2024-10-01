@@ -18,7 +18,7 @@ import NavDown from "./wrappers/NavDown";
 export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
-    const [tags, setTags] = useOutletContext();
+    const [tags, setTags, show] = useOutletContext();
     const [loading, setLoading] = useState(true);
     const wither = useRef();
     // useEffect(() => {
@@ -30,12 +30,17 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                 <Back></Back> 
                 { width > 800 ?
                     <Col className="position-relative" xs="auto" style={{minWidth:"170px"}}>
-                        <div className="sticky-top" style={{top:"1rem"}}>
-                        <NavDown delay={0.25}>
-                        <Breadish></Breadish>
-                        {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
-                        </NavDown>
+                        {/* <div className="test" style={{position:"absolute", top:"-90px", width:"100%", height:"100%"}}>
+                        <div className="test" style={{height:"90px", position:"sticky", top:`${show? 0:-90}px`, transition: "top 0.15s"}}>
+                            <div className="test" style={{position:"absolute", bottom:"-90px"}}> */}
+                            <NavDown delay={0.25}>
+                            {/* {""+show} */}
+                            <Breadish></Breadish>
+                            {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
+                            </NavDown>
+                            {/* </div>
                         </div>
+                        </div> */}
                     </Col>
                     : 
                     // <div className="" style={{position:"absolute", top:"55px", height:"100%"}}>
@@ -47,13 +52,13 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                         {children}
                 </Col>
                 {width >= wid && 
-                    <Col xs="auto" className="position-relative">
-                        <div className="sticky-top p-0 m-0" style={{top:"1rem"}} >
+                    <Col xs="auto" className="position-relative" style={{minWidth:"215px"}}>
+                        {/* <div className="sticky-top p-0 m-0" style={{top:"1rem"}} > */}
 
                         <NavDown delay={0.25}>
                                 <Filter tags={tags} setTags={setTags}></Filter>
                         </NavDown>
-                        </div>
+                        {/* </div> */}
 
                     </Col>
                 }

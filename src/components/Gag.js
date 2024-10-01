@@ -33,13 +33,13 @@ function Gag({show, setShow}) {
         if (speed > 0.2) {
             setShow(true);
         }
-        else if (speed < -0.2 && pos > 80) {
+        else if (speed < -0.2 && pos > 180) {
             setShow(false);
         } 
     }, [speed])
 
     return (
-        <Navbar className={`test prevent-select nav-trans inter-love ${show? 'nav-mask-show' : pos > 90? 'nav-mask-hide': 'nav-mask-show'}`} 
+        <Navbar className={`test prevent-select nav-trans inter-love ${show? 'nav-mask-show' : pos > 180? 'nav-mask-hide': 'nav-mask-show'}`} 
         sticky="top"
         style={{backgroundColor:"rgb(255,255,255)", opacity: 0.8, maxWidth:"1370px", margin:"auto"}}
         >

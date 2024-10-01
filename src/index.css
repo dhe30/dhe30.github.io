@@ -507,3 +507,7 @@ a {
 .nav-down-animation {
   transition: transform 0.15s;
 }
+
+.test-block {
+  background-color: red;
+}
