@@ -13,6 +13,7 @@ import MenuModal from "./MenuModal";
 import { useOutletContext } from "react-router-dom";
 import { QueryContext, TagContext } from "../store/TagContext";
 import ScrollAnimator from "./wrappers/ScrollAnimator";
+import NavDown from "./wrappers/NavDown";
 
 export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, children}) {
     const { width } = useWindowSize();
@@ -30,10 +31,10 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                 { width > 800 ?
                     <Col className="position-relative" xs="auto" style={{minWidth:"170px"}}>
                         <div className="sticky-top" style={{top:"1rem"}}>
-                        {/* <ScrollAnimator delay={0.25}> */}
+                        <NavDown delay={0.25}>
                         <Breadish></Breadish>
                         {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
-                        {/* </ScrollAnimator> */}
+                        </NavDown>
                         </div>
                     </Col>
                     : 
@@ -43,16 +44,15 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                 }
                 <Col ref={wither} className="" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
-                {wither.current && wither.current.offsetWidth +"\n" + `${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}` + "\n"}
                         {children}
                 </Col>
                 {width >= wid && 
                     <Col xs="auto" className="position-relative">
                         <div className="sticky-top p-0 m-0" style={{top:"1rem"}} >
 
-                        {/* <ScrollAnimator delay={0.25}> */}
+                        <NavDown delay={0.25}>
                                 <Filter tags={tags} setTags={setTags}></Filter>
-                        {/* </ScrollAnimator> */}
+                        </NavDown>
                         </div>
 
                     </Col>

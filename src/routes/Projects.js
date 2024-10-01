@@ -23,7 +23,7 @@ export default function Projects() {
 
     const demoRef = useRef();
 
-    function comparator(a, b) {
+    const comparator = (a, b) => {
         const hasa = a.tags.some((el) => tags.includes(el));
         const hasb = b.tags.some((el) => tags.includes(el));
         console.log(hasa, hasb);
@@ -67,10 +67,10 @@ export default function Projects() {
         // console.log(projetcs);
         setProjetcs((projetcs) => projetcs.toSorted(comparator));
     }, [tags])
-    useEffect(() => {
-        // console.log(projetcs);
-        setProjetcs((projetcs) => projetcs.toSorted(comparator));
-    }, [])
+    // useEffect(() => {
+    //     // console.log(projetcs);
+    //     setProjetcs((projetcs) => projetcs.toSorted(comparator));
+    // }, [])
     return (
         //NOTES: fix grey tag, shift scdescriptor down 
         <ProjectWrapper wid={1025} s>

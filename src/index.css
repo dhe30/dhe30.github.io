@@ -499,3 +499,11 @@ a {
 .expansionist:hover {
   transform: scale(1.1);
 }
+
+.nav-down {
+  transform: translateY(6rem);
+}
+
+.nav-down-animation {
+  transition: transform 0.15s;
+}
