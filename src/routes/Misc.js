@@ -17,8 +17,6 @@ export default function Misc() {
     return (
         
         <ProjectWrapper wid={1200} restrictionAbove1025={1}>
-            {width + "\n"}
-            {wither.current && wither.current.offsetWidth}
             {/* <div className="test graphics mx-auto" style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-60 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}}>
                 <div className="test graphics" style={{position:"absolute", width:`${width < 810 ? width+2 +"px": "100%"}`, height:"500px", marginLeft:`${width < 810 ? "-32px": ""}`}}>
                     <div className="special-border m-1">
@@ -33,8 +31,8 @@ export default function Misc() {
                         {
                             data.collections.graphics.projects.map((elem) => {
                                 return (
-                                    <Row className="p-0 m-0 my-5">
-                                        <Graphics image={elem.images[0].url}></Graphics>
+                                    <Row className="p-0 m-0 my-5" id={elem.title}>
+                                        <Graphics image={elem.images[0].img}></Graphics>
                                     </Row>
                                 )
                             })

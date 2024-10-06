@@ -7,7 +7,7 @@ import data from "../data/portfolio";
 export default function Collections() {
     const minis = 2;
     return (
-        <ProjectWrapper wid={1085}>
+        <ProjectWrapper wid={1070}>
             <Crumbs crumbs={["Home", "Projects", "Collections"]}></Crumbs>
             {
                 Object.keys(data.collections).map((elem) => {
@@ -17,9 +17,9 @@ export default function Collections() {
                         <>
                         <Collection title={elem} image={projects.thumbnail}></Collection>
                         <div className=" test ps-4 mx-auto mb-5" style={{borderLeft:"3px dashed black", width:"fit-content"}}>
-                           { [0,1].map((elem,index) => {
+                           { [0,1].map((element,index) => {
                                 const project = projects.projects[(rand+index)%projects.projects.length]
-                                return <MiniCollections title={project.title}></MiniCollections>
+                                return <MiniCollections path={elem} title={project.title} description={project.description} image={project.images[0].img}></MiniCollections>
                             })
                             }
                             

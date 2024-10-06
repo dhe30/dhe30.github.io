@@ -24,7 +24,7 @@ function Breadish({bread = {"Collections" : ["collectionitem1", "collectionitem2
         );
     }
     return (
-    <div className='mb-3 me-2'>
+    <div className='mb-3' >
         <Accordion defaultActiveKey={[]} alwaysOpen>
             {Object.keys(bread).map((item, index) => {
                 return (

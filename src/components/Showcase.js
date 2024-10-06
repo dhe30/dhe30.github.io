@@ -7,13 +7,10 @@ import ShowcaseModal from "./ShowcaseModal";
 
 
 function Showcase({clientWidth, imagers}) {
-    const test = imagers || [
+    const test = imagers 
+    || [
         {img:"Engram/EngramHome1.png", caption: "10"},
-        {img:"Engram/EngramPrompt.png", caption: "1"},
-        {img:"Engram/EngramLEQ.png", caption: "1"},
-        {img:"Engram/EngramWrite.png", caption: "3"},
-        {img:"Engram/EngramHard1.png", caption: "0"},
-        {img:"Engram/prototype.png", caption: "0"},
+        
     ]
 
     const { width } = useWindowSize();
@@ -64,7 +61,7 @@ function Showcase({clientWidth, imagers}) {
 
     const forward = () => {
         if (!(freeze || show)) {
-            setFreeze(true);
+            setFreeze((freeze)=>!freeze);
             console.log(one);
             setCurrent(current - 1 < 0? 2: current-1);
             setCurrentActual(currentActual - 1 < 0? test.length-1: currentActual-1);
@@ -72,15 +69,17 @@ function Showcase({clientWidth, imagers}) {
                 if (index === 2) {
                     element.current.style.transition="";
                     one[2].current.style.transform=`translateX(${parseInt((element.current.style.transform?element.current.style.transform.substring(element.current.style.transform.indexOf("(")+1,element.current.style.transform.indexOf(")")-1):"0"))-200}%)`;
-                    one.unshift(one.pop());
-                    setOne(one);
-                    images[current]=minus(images[current - 1 < 0? 2: current-1],2);
-                    setImages(images);
+                    
                 } else {
                     element.current.style.transform=`translateX(${parseInt((element.current.style.transform?element.current.style.transform.substring(element.current.style.transform.indexOf("(")+1,element.current.style.transform.indexOf(")")-1):"0"))+100}%)`;
                     element.current.style.transition="transform 0.5s ease-in-out";
                 }
             });
+            one.unshift(one.pop());
+            setOne(one);
+            images[(current+1)%3]=minus(images[current],2);
+            console.log(images)
+            setImages(images);
             setTimeout(()=> {
                 setFreeze(false);
                 setReset(!reset);
@@ -192,11 +191,13 @@ function Showcase({clientWidth, imagers}) {
                     <Arrow 
                         height={40}
                         width={40}
+                        fill="#CB7AE0"
                         className={`down-arrow expand-animation ${expand && "expand-anima-down"}`}
                     ></Arrow>
                     <Arrow 
                         height={40}
                         width={40}
+                        fill="#CB7AE0"
                         className={`up-arrow expand-animation ${expand && "expand-anima-up"}`}
                     ></Arrow>
                     <img 
@@ -205,12 +206,12 @@ function Showcase({clientWidth, imagers}) {
                         style={{
                             objectFit: "cover",
                             width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
-                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
+                            height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
                             position:"absolute",
                             top:"0",
                             left: `-${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
                         }} 
-                        src={require(`../assets/${test[images[0]].img}`)}
+                        src={require(`../assets/${test[images[0]] ? test[images[0]].img : "Engram/EngramHome1.png"}`)}
                         ref={two}
                     ></img>  
                     <img 

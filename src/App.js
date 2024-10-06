@@ -5,13 +5,13 @@ import Breadish from "./components/Breadish";
 import './index.css';
 import Crumbs from "./components/Crumbs";
 import { Col, Container, Row } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Back from "./components/Back";
 import Filter from "./components/Filter";
 import useWindowSize from "./hooks/useWindowSize";
 
-import { Outlet, useOutletContext } from "react-router-dom";
+import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import useWheel from "./hooks/useWheel";
 import ScrollAnimator from "./components/wrappers/ScrollAnimator";
@@ -19,6 +19,24 @@ import ScrollAnimator from "./components/wrappers/ScrollAnimator";
 function App() {
   const [tags, setTags] = useState([]);
   const [show, setShow] = useState([]);
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    // if not a hash link, scroll to top
+    if (hash === '') {
+      window.scrollTo(0, 0);
+    }
+    // else scroll to id
+    else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]); // do this on route change
   return (
     <>
     <ScrollToTop>

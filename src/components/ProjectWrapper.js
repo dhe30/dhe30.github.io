@@ -26,10 +26,10 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
     // }, [])
     return (
         <Container fluid className=" d-flex justify-content-center p-0 m-0 p-relative">
-                <Row className=" test mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
+                <Row className=" mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
                 <Back></Back> 
                 { width > 800 ?
-                    <Col className="position-relative" xs="auto" style={{minWidth:"170px"}}>
+                    <Col className="position-relative p-0 m-0 " xs="auto" style={{minWidth:"190px"}}>
                         {/* <div className="test" style={{position:"absolute", top:"-90px", width:"100%", height:"100%"}}>
                         <div className="test" style={{height:"90px", position:"sticky", top:`${show? 0:-90}px`, transition: "top 0.15s"}}>
                             <div className="test" style={{position:"absolute", bottom:"-90px"}}> */}
@@ -47,12 +47,12 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     // </div>
                 }
-                <Col ref={wither} className="" style={{position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 415) + "px":width - 250 + "px":""}`}}>
+                <Col ref={wither} className="" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 430) + "px":width - 275 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
                         {children}
                 </Col>
                 {width >= wid && 
-                    <Col xs="auto" className="position-relative" style={{minWidth:"215px"}}>
+                    <Col xs="auto" className="position-relative p-0 m-0" style={{minWidth:"215px"}}>
                         {/* <div className="sticky-top p-0 m-0" style={{top:"1rem"}} > */}
 
                         <NavDown delay={0.25}>

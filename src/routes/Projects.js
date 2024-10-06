@@ -82,12 +82,16 @@ export default function Projects() {
             >
                 {/* {tags.map((elem) => "susu"+elem)} */}
                 {/* {JSON.stringify(projetcs)} */}
-                {projetcs.map((elem) => {
+                {projetcs.map((elem, index) => {
+                    console.log(elem.images)
+                    console.log(index)
                     return (
-                        <Row className="p-0 m-0 mb-5">
-                            <ProjectCase width={width} tags={elem.tags} title={elem.title}>
+                        // <div className="m-0 p-0 wuhcueyvchewdbvdv" id={index + ""}>
+                        <Row className="p-0 m-0 mb-5" id={elem.title}>
+                            <ProjectCase width={width} tags={elem.tags} title={elem.title} imagers={elem.images}>
                             </ProjectCase>
                         </Row>
+                        // </div>
                     )
                 })}
             </Row>

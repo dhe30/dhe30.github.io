@@ -15,7 +15,7 @@ export default function Graphics({image, title, date, description}) {
         <Container className="m-0">
             <Row className="test justify-content-center">
                 <Col xs="auto" ref={width} className="glass-pane p-1">
-                    <img className="wrap-text" src={require(`../assets/graphics/${image || "T4780203 1.png"}`)}></img>        
+                    <img className="wrap-text" src={require(`../assets/${image || "T4780203 1.png"}`)}></img>        
                 </Col>
                 <Col xs="" className="glass-pane py-2" style={{maxWidth:`${width.current? width.current.offsetWidth:""}px`}}>
                 <span className="align-top inter-love">

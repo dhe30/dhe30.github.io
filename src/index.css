@@ -511,3 +511,7 @@ a {
 .test-block {
   background-color: red;
 }
+
+.showcase-image {
+  object-position: right top;
+}
