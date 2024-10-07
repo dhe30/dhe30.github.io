@@ -3,6 +3,7 @@ import '../index.css';
 import arrow from "../assets/rightarrow.svg";
 import GreyTag from "./GreyTag";
 import { Link } from "react-router-dom";
+import SpecialLink from "./SpecialLink";
 function Collection({title, image}) {
     return (
         <Row className="pt-5">
@@ -28,6 +29,7 @@ function Collection({title, image}) {
                         style={{marginTop:"-15px"}}
                     ></img>
                     <span className="inria-sans-regular-italic ms-2" style={{fontSize:"16px"}}>see all</span>
+                    <SpecialLink title="ags"></SpecialLink>
                 </span>
                 </Link>
                 <p className="test" style={{fontSize:"18px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

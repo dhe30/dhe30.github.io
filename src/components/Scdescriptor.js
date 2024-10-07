@@ -8,7 +8,7 @@ function Scdescriptor({title, description = "Lorem ipsum dolor sit amet, consect
     }
     return (
         <div>
-            <h1 className="jetbrains-mono-yuh" style={{fontSize:"30px", fontWeight:"bold"}}>
+            <h1 className="jetbrains-mono-yuh stroketext" style={{fontSize:"30px", fontWeight:"bold"}}>
                 <a className="naked" href="https://github.com/">{title || "Super Great Project"} <img src={rightUp}></img></a>
             </h1>
             <h2 className="jetbrains-mono-yuh my-4" style={{fontSize:"18px", fontWeight:"bold"}}>{date || "March 2018"}</h2>

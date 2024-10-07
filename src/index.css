@@ -515,3 +515,34 @@ a {
 .showcase-image {
   object-position: right top;
 }
+.special-link {
+  background-color: #CB7AE0;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+  transition: all 0.15s ease-out;
+
+}
+.special-link-animation {
+  background-color: #fcb7f4;
+
+  transform: scale(3) translateX(7px);
+}
+
+.twofiveeaseinout {
+  transition: all 0.20s ease-in-out;
+}
+.special-link-button {
+  visibility: hidden;
+  transform: scale(0);
+}
+.special-link-button-animation {
+  visibility: visible !important;
+  transform: scale(0.2);
+}
+
+.stroketext:hover {
+  /* transition: all 0.15s;
+  -webkit-text-stroke: 1px navy;
+  text-stroke: 4px navy; */
+}
