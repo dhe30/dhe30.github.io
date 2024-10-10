@@ -245,8 +245,17 @@ function Showcase({clientWidth, imagers}) {
                     <ShowcaseModal show={show} handleClose={handleClose} image={test[currentActual]}></ShowcaseModal> 
                 </div>
                 {/* <div>{test[curr].caption}</div> */}
-            <div className="position-relative mt-2 showcase-image" style={{minHeight:"109px", textAlign:"center", fontSize:"12px", border:"1px solid #D5D5D5"}}>
-                <span className="d-block pt-3 inter-love">{test[currentActual].caption}</span>
+            <div 
+                className="position-relative mt-2 showcase-image px-4" 
+                style={{
+                    minHeight:"109px", 
+                    textAlign:"center", 
+                    fontSize:"12px", 
+                    border:"1px solid #D5D5D5",
+                    width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                }}
+            >
+                <p className="d-block pt-3 inter-love">{test[currentActual].caption}</p>
                 <div className="position-absolute" style={{bottom:"0", left:"50%", transform: "translate(-50%, -50%)"}}>
                     {[...Array(test.length).keys()].map((elem) => {
                         return (<span className="dot" style={{backgroundColor: `${elem === currentActual ? "black":""}`}}></span>)

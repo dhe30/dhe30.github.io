@@ -8,35 +8,35 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["pandas", "python", "flask", "JavaScript", "SQL", "skills"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "This data science project visualizes NYC taxi pickups and drop-off clusters from 2010-2014, providing an interactive map where users can click on a point to display the specific route taken. The project handles over 500 million entries from a large database. Built with a full stack using Flask (Python web framework) and SQLite, the application leverages the robust Mapbox API (used by platforms like Snapchat and Instacart) to render maps, clusters, and routes. Additionally, Chart.js is utilized to display graph-based statistics, while the frontend is crafted with Bootstrap and Jinja for a seamless, responsive user experience.", 
                     "images": [
                         {
                             "img": "taxist/taxismtest4.png",
-                            "caption": ""
+                            "caption": "Homepage, select the year you want to read taxi data from"
                         },
                         {
                             "img": "taxist/taxism2.png",
-                            "caption": ""
+                            "caption": "Informational page for fun"
                         },
                         {
                             "img": "taxist/taxistroute.gif",
-                            "caption": ""
+                            "caption": "Isolated trip route and its stats on the side (passengers, time, fare)"
                         },
                         {
                             "img": "taxist/taxismaggregate.png",
-                            "caption": ""
+                            "caption": "Clustering to aggregate millions of individual data points; purple to yellow ratio of pickups and dropoffs"
                         },
                         {
                             "img": "taxist/taxistshowcasegrouping-ezgif.com-speed.gif",
-                            "caption": ""
+                            "caption": "Demo of data point clustering functionality from the MapBox API"
                         },
                         {
                             "img": "taxist/mapdots.png",
-                            "caption": ""
+                            "caption": "Select an individual pickup or dropoff location to display the route of the trip"
                         },
                         {
                             "img": "taxist/taxismstats2.png",
-                            "caption": ""
+                            "caption": "Graph statistics of taxi trip data"
                         }
                     ]
 
@@ -46,35 +46,35 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["pandas", "python", "flask", "JavaScript", "SQL", "firebase"],
                     "date": "2019-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "An AI-driven writing platform designed for CollegeBoard test prep, my internship project at Engram, an early-stage EdTech company focused on creating digital, interactive learning experiences. The platform offers writing modules tailored to different learning levels, providing students with high-quality feedback through a large language model fine-tuned for historical argumentation. This project aims to address disparities in resource availability across schools. It was a frontend-focused project built using a Vue.js and Firestore tech stack, with Vuex for efficient state management.", 
                     "images": [
                         {
                             "img": "Engram/engramhomepage1.png",
-                            "caption": ""
+                            "caption": "Homepage"
                         },
                         {
                             "img": "Engram/engramselect.png",
-                            "caption": ""
+                            "caption": "Selection page highlighting main features for various writing exercises tailored to different learning levels"
                         },
                         {
                             "img": "Engram/engrampromptselect.png",
-                            "caption": ""
+                            "caption": "Select different essay prompts"
                         },
                         {
                             "img": "Engram/engramtemplate.png",
-                            "caption": ""
+                            "caption": "Learn writing: fill-in-the-blank essay template with a heavy focus on drilling basic essay structure"
                         },
                         {
                             "img": "Engram/engramamerica.png",
-                            "caption": ""
+                            "caption": "Responsive UI and sidebar content"
                         },
                         {
                             "img": "Engram/EngramHard1.png",
-                            "caption": ""
+                            "caption": "Long Essay Question exercise: timed (dynamic SVG timer), independent essay writing for test prep"
                         },
                         {
                             "img": "Engram/prototype.png",
-                            "caption": ""
+                            "caption": "“GTP” wrapper for testing types of feedback response (dynamic, static) and different LLM models: Palm2 (now Gemini), ChatGPT, Cohere, Jurassic2"
                         }
                     ]
 
@@ -89,7 +89,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Graphics engine written in Java to render various shapes and meshes with lighting and shading. Each added implementation to the graphics engine is followed by a unique image showcasing the feature.\n\nFirst implementation: Bresenham’s Line Algorithm to find integer coordinates that best approximate a line between two endpoints.", 
                     "images": [
                         {
                             "img": "graphics/lines.png",
@@ -102,7 +102,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Shapes are now organized as a series of edges to an edge list and iterated over in pairs of points\n\nHere is a slope field (a graphical representation of the general solution to a first-order differential equation) of a trigonometric function. Created by adding endpoints corresponding to the slope of a function at each discrete coordinate point, to the edge list.", 
                     "images": [
                         {
                             "img": "graphics/matrix.gif",
@@ -115,7 +115,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Three-dimensional transformations via transformation matrices: dilations, translations, and rotations.\n\nA function mapping to rotational transformations applied to various lines to achieve a tulle-like texture.", 
                     "images": [
                         {
                             "img": "graphics/test1.png",
@@ -128,7 +128,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Curves—points are generated by parametric equations to create splines. Specifically, Hermite and Bezier curves.\n\nEdge detection was used on an image to generate an SVG file, which defines shapes using lines and curves. By parsing this file, we extract parameters for these shapes and add them to our edge list, allowing the image to be rendered in our graphics engine.", 
                     "images": [
                         {
                             "img": "graphics/miku.png",
@@ -141,7 +141,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Triangles! Points are generated “across the surface” of 3D shapes (for now, only boxes, spheres, and toruses). We can procedurally connect these points to draw 2D polygon surfaces, selecting three points constituting a triangle to be added to our polygon list. This can be optimized with backface culling, where we avoid generating hidden surfaces (behind other surfaces) by calculating the surface normal.", 
                     "images": [
                         {
                             "img": "graphics/balls.gif",
@@ -154,7 +154,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Relative coordinate system by implementing a “stack” of transformations. Each new shape is transformed relative to the transformation of the previous shape. Scanline conversion was used to fill in a polygon by drawing a series of horizontal (or vertical) lines to cover the entire surface. A Z-buffer mapping to the 2D array of pixels was used to prevent rendering overlapping surfaces not accounted for by backface culling.", 
                     "images": [
                         {
                             "img": "graphics/gateway.png",
@@ -167,7 +167,7 @@
                     "repo":"https://github.com/jus910/NoseDamage",
                     "tags": ["Java"],
                     "date": "2012-04-23T18:25:43.511Z",
-                    "description": "", 
+                    "description": "Phong reflection model to calculate ambient, diffuse, and specular light, coupled with the Gouraud shading model to determine how the surface should be colored. Our engine can now also parse and render any mesh from a 3D mesh file.\n\nA teapot with shading and lighting.", 
                     "images": [
                         {
                             "img": "graphics/360.png",

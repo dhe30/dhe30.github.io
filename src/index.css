@@ -546,3 +546,26 @@ a {
   -webkit-text-stroke: 1px navy;
   text-stroke: 4px navy; */
 }
+
+.see-all-animation {
+  transform: translateX(0px);
+  visibility: visible;
+}
+.see-all {
+  visibility: hidden;
+  transform: translateX(-55px);
+}
+
+.see-all-test{
+  transform: translateX(-50px);
+}
+
+.see-it-all {
+  transition: all 0.15s ease-out;
+}
+
+.white-block{
+  background-color: white;
+  z-index: 1;
+  position: relative;
+}

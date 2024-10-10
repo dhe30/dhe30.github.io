@@ -13,7 +13,7 @@ export default function ProjectCase({width, imagers, tags, description, title}) 
                 <Showcase imagers={imagers} clientWidth={width-50}></Showcase>
             </Col>
             <Col className="" style={{minWidth:"250px", maxWidth:"550px"}}>
-                <Scdescriptor title={title} description={description}></Scdescriptor>
+                <Scdescriptor title={title} description={description} clientWidth={width-50}></Scdescriptor>
             </Col>
         </Row>
     )

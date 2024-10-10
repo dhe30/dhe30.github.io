@@ -88,7 +88,13 @@ export default function Projects() {
                     return (
                         // <div className="m-0 p-0 wuhcueyvchewdbvdv" id={index + ""}>
                         <Row className="p-0 m-0 mb-5" id={elem.title}>
-                            <ProjectCase width={width} tags={elem.tags} title={elem.title} imagers={elem.images}>
+                            <ProjectCase 
+                                width={width} 
+                                tags={elem.tags} 
+                                title={elem.title} 
+                                imagers={elem.images}
+                                description={elem.description}
+                            >
                             </ProjectCase>
                         </Row>
                         // </div>

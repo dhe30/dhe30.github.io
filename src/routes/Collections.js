@@ -16,7 +16,7 @@ export default function Collections() {
                     return (
                         <>
                         <Collection title={elem} image={projects.thumbnail}></Collection>
-                        <div className=" test ps-4 mx-auto mb-5" style={{borderLeft:"3px dashed black", width:"fit-content"}}>
+                        <div className=" test ps-4 mx-auto mb-5" style={{width:"fit-content"}}>
                            { [0,1].map((element,index) => {
                                 const project = projects.projects[(rand+index)%projects.projects.length]
                                 return <MiniCollections path={elem} title={project.title} description={project.description} image={project.images[0].img}></MiniCollections>

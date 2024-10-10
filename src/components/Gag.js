@@ -46,7 +46,7 @@ function Gag({show, setShow}) {
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
             <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
                 <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
-                   <span className='headings'> Daniel LastName </span>
+                   <span className='headings'> Daniel</span>
                 </Navbar.Brand>
                     <Nav className='bar-bar-bar justify-content-left'>
                             {/*decrease text size around 750 px client width*/}

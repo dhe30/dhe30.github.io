@@ -26,8 +26,9 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
     // }, [])
     return (
         <Container fluid className=" d-flex justify-content-center p-0 m-0 p-relative">
-                <Row className=" mx-3 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
-                <Back></Back> 
+                <Row className="justify-content-around test m-0 p-0 mx-xs-0 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
+                    <Col xs="12" className="m-0 p-0" style={{zIndex:"2"}}><Back></Back> 
+                    </Col>
                 { width > 800 ?
                     <Col className="position-relative p-0 m-0 " xs="auto" style={{minWidth:"190px"}}>
                         {/* <div className="test" style={{position:"absolute", top:"-90px", width:"100%", height:"100%"}}>
@@ -47,7 +48,7 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     // </div>
                 }
-                <Col ref={wither} className="" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 430) + "px":width - 275 + "px":""}`}}>
+                <Col ref={wither} className="test p-0 m-0" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 430) + "px":width - 275 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
                         {children}
                 </Col>
