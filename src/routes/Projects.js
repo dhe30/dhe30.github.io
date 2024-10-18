@@ -73,11 +73,11 @@ export default function Projects() {
     // }, [])
     return (
         //NOTES: fix grey tag, shift scdescriptor down 
-        <ProjectWrapper wid={1025} s>
+        <ProjectWrapper wid={1200}>
             <Crumbs crumbs={["Home", "Projects", "Collections", "WebDev"]}></Crumbs>
             <Row 
                 className="justify-content-center p-0 m-0" 
-                style={{maxWidth:"1000px"}}
+                // style={{maxWidth:"1000px"}}
                 ref={demoRef}
             >
                 {/* {tags.map((elem) => "susu"+elem)} */}

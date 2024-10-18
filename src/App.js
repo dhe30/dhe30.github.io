@@ -15,6 +15,7 @@ import { Outlet, useLocation, useOutletContext } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import useWheel from "./hooks/useWheel";
 import ScrollAnimator from "./components/wrappers/ScrollAnimator";
+import Foot from "./components/Foot";
 
 function App() {
   const [tags, setTags] = useState([]);
@@ -39,16 +40,13 @@ function App() {
   }, [pathname, hash, key]); // do this on route change
   return (
     <>
-    <ScrollToTop>
-    </ScrollToTop>
-    <div className="p-0 m-0">
       {/* <div className="bar"><Gag></Gag></div> */}
       {/* <ScrollAnimator fixer={{position: "sticky", top: "0"}}> */}
         <Gag show={show} setShow={setShow}></Gag>
       {/* </ScrollAnimator> */}
       {/* <Test></Test> */}
       <Outlet  context={[tags, setTags, show]}/>
-    </div>
+      <Foot></Foot>
     </>
   );
 }

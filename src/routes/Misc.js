@@ -31,8 +31,8 @@ export default function Misc() {
                         {
                             data.collections.graphics.projects.map((elem) => {
                                 return (
-                                    <Row className="p-0 m-0 my-5" id={elem.title}>
-                                        <Graphics image={elem.images[0].img} description={elem.description}></Graphics>
+                                    <Row className="p-0 m-0 my-5" id={elem.title.replace(/\s/g, "")}>
+                                        <Graphics title={elem.title} image={elem.images[0].img} description={elem.description}></Graphics>
                                     </Row>
                                 )
                             })

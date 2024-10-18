@@ -8,6 +8,7 @@ import useWheel from '../hooks/useWheel';
 import useFetch from '../hooks/useFetch';
 import { NavbarCollapse } from 'react-bootstrap';
 import SmallMenu from './SmallMenu';
+import solidius from "../assets/icons8-solidus-key-50.png";
 function Gag({show, setShow}) {
 
     const [date, setDate] = useState(new Date(Date.now()));
@@ -41,12 +42,15 @@ function Gag({show, setShow}) {
     return (
         <Navbar className={`test prevent-select nav-trans inter-love ${show? 'nav-mask-show' : pos > 180? 'nav-mask-hide': 'nav-mask-show'}`} 
         sticky="top"
-        style={{zIndex:`${!show?-10:3}`,backgroundColor:"rgb(255,255,255)", opacity: 0.8, maxWidth:"1370px", margin:"auto"}}
+        style={{zIndex:`${!show?-10:3}`,backgroundColor:"rgb(255,255,255)", opacity: 0.8, maxWidth:"", margin:"auto"}}
         >
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
-            <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4'>
+            <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4 mx-lg-5'>
                 <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
-                   <span className='headings'> Daniel</span>
+                   <span className='headings'>
+                    {/* <span className='stylin'>/</span> */}
+                <img src={solidius} style={{verticalAlign:"-10px"}}></img>
+                    dhe30</span>
                 </Navbar.Brand>
                     <Nav className='bar-bar-bar justify-content-left'>
                             {/*decrease text size around 750 px client width*/}

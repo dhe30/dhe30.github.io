@@ -19,8 +19,12 @@ function Showcase({clientWidth, imagers}) {
     const three = useRef([]);
     const four = useRef([]);
     const savedCallback = useRef();
-    const limit = 1260;
+    const limit = 1275;
+    const upperLimit = 1333; // should be == to limit if text width is resolved 
     const heightRatio = 370;
+
+    const sizeWidth = width < limit ? width < 600 ? 520-(600-width):clientWidth: width > upperLimit ? 520 + (width - upperLimit):520;
+    const sizeHeight = width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370: width > upperLimit ? ((520 + (width - upperLimit))/520) * 370: 370
 
     const [one,setOne] = useState([two,three,four]);
     const [images, setImages] = useState([minus(0),0,plus(0),])
@@ -131,8 +135,8 @@ function Showcase({clientWidth, imagers}) {
                     style={{
                         position:"relative", 
                         overflow:"hidden",
-                        width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
-                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
+                        width: `${sizeWidth}px`,
+                        height: `${sizeHeight}px`,
                     }}
                     
                 >
@@ -205,11 +209,11 @@ function Showcase({clientWidth, imagers}) {
                         className="showcase-image"
                         style={{
                             objectFit: "cover",
-                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
-                            height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
+                            width: `${sizeWidth}px`,
+                            height: `${sizeHeight}px`,
                             position:"absolute",
                             top:"0",
-                            left: `-${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                            left: `-${sizeWidth}px`,
                         }} 
                         src={require(`../assets/${test[images[0]] ? test[images[0]].img : "Engram/EngramHome1.png"}`)}
                         ref={two}
@@ -219,8 +223,8 @@ function Showcase({clientWidth, imagers}) {
                         className="showcase-image"
                         style={{
                             objectFit: "cover",
-                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
-                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
+                            width: `${sizeWidth}px`,
+                        height: `${sizeHeight}px`,
                             position:"absolute",
                             top:"0",
                             left: "0"
@@ -233,11 +237,11 @@ function Showcase({clientWidth, imagers}) {
                         className="showcase-image"
                         style={{
                             objectFit: "cover",
-                            width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
-                        height: `${width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370:370}px`,
+                            width: `${sizeWidth}px`,
+                        height: `${sizeHeight}px`,
                             position:"absolute",
                             top:"0",
-                            left: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                            left: `${sizeWidth}px`,
                         }} 
                         src={require(`../assets/${test[images[2]].img}`)}
                         ref={four}
@@ -252,10 +256,10 @@ function Showcase({clientWidth, imagers}) {
                     textAlign:"center", 
                     fontSize:"12px", 
                     border:"1px solid #D5D5D5",
-                    width: `${width < limit ? width < 600 ? 520-(600-width):clientWidth:520}px`,
+                    width: `${sizeWidth}px`,
                 }}
             >
-                <p className="d-block pt-3 inter-love">{test[currentActual].caption}</p>
+                <p className="d-block pt-3 inter-love">{test[currentActual].caption} {sizeWidth} </p>
                 <div className="position-absolute" style={{bottom:"0", left:"50%", transform: "translate(-50%, -50%)"}}>
                     {[...Array(test.length).keys()].map((elem) => {
                         return (<span className="dot" style={{backgroundColor: `${elem === currentActual ? "black":""}`}}></span>)

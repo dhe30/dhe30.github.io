@@ -24,7 +24,7 @@ export default function Graphics({image, title, date, description}) {
                         <span className="inika-regular">
                             <span className="fonty-small d-block">{date || 2022}, Pixel On Screen</span>
                             <span className="fonty-small d-block py-3">Overview</span>
-                            <p style={{whiteSpace:"pre-wrap"}}>
+                            <p style={{whiteSpace:"pre-wrap", minWidth:"250px"}}>
                             {description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex"}
                             </p>
                         </span>

@@ -106,6 +106,7 @@ code {
 
 .breadlet {
   color: #767676;
+  margin-left: 8px;
 }
 
 .unbutton {
@@ -521,6 +522,7 @@ a {
   width: 14px;
   border-radius: 7px;
   transition: all 0.15s ease-out;
+  z-index: 2;
 
 }
 .special-link-animation {
@@ -568,4 +570,51 @@ a {
   background-color: white;
   z-index: 1;
   position: relative;
+}
+
+.text-outline {
+  text-shadow:
+    -0.5px -0.5px 0 black,
+     0   -0.5px 0 black,
+     0.5px -0.5px 0 black,
+     0.5px  0   0 black,
+     0.5px  0.5px 0 black,
+     0    0.5px 0 black,
+    -0.5px  0.5px 0 black,
+    -0.5px  0   0 black;
+}
+
+.footer {
+  background-color: #f1bbff;
+}
+
+.footer-foot {
+  display: inline-block;
+  color:#f1bbff;
+  font-size: 128px;
+  /* font-weight: 900; */
+  /* transform: scaleX(1.2);
+  transform-origin: 0 0; */
+}
+
+.footer-foot-weight {
+    font-weight: 900;
+}
+.slash {
+  /* vertical-align: bottom; */
+  margin-top: -20px ;
+}
+
+.with-icon {
+  white-space:nowrap;
+}
+
+.stylin {
+  font-weight: 900; 
+ transform: scaleX(1.2);
+  transform-origin: 0 0;
+  margin-top: -10px;
+}
+.footer-label {
+  /* color: #9c6ca8; */
 }

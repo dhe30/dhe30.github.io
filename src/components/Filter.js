@@ -112,7 +112,7 @@ function Filter({tags, setTags}) {
     const inputRef = useRef(null);
 
     return ( 
-        <div className="mb-4 testColor" style={{width:"189px", position:"relative"}}>
+        <div className="mb-4 testColor test" style={{width:"189px", position:"relative"}}>
             <img alt="" src={filter} className="mb-2"></img>
             <span className="inria-sans-regular" style={{fontSize:"18px"}}>Filter</span>
             <button 

@@ -26,11 +26,11 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
     // }, [])
     return (
         <Container fluid className=" d-flex justify-content-center p-0 m-0 p-relative">
-                <Row className="justify-content-around test m-0 p-0 mx-xs-0 mx-sm-3 mx-md-4" style={{maxWidth:"1300px"}}>
+                <Row className="test justify-content-around m-0 p-0 mx-xs-0 mx-sm-3 mx-md-4 mx-lg-5" style={{maxWidth:""}}>
                     <Col xs="12" className="m-0 p-0" style={{zIndex:"2"}}><Back></Back> 
                     </Col>
                 { width > 800 ?
-                    <Col className="position-relative p-0 m-0 " xs="auto" style={{minWidth:"190px"}}>
+                    <Col className="position-relative p-0 m-0 test-block" xs="auto" style={{width:"190px"}}>
                         {/* <div className="test" style={{position:"absolute", top:"-90px", width:"100%", height:"100%"}}>
                         <div className="test" style={{height:"90px", position:"sticky", top:`${show? 0:-90}px`, transition: "top 0.15s"}}>
                             <div className="test" style={{position:"absolute", bottom:"-90px"}}> */}
@@ -48,12 +48,12 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                         <MenuModal tags={tags} setTags={setTags}></MenuModal>
                     // </div>
                 }
-                <Col ref={wither} className="test p-0 m-0" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > 1025? width - (restrictionAbove1025 || 430) + "px":width - 275 + "px":""}`}}>
+                <Col ref={wither} className="test p-0 m-0" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > wid? width - (restrictionAbove1025 || 480) + "px":width - 275 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}
                         {children}
                 </Col>
                 {width >= wid && 
-                    <Col xs="auto" className="position-relative p-0 m-0" style={{minWidth:"215px"}}>
+                    <Col xs="auto" className="position-relative p-0 m-0" style={{minWidth:"190px"}}>
                         {/* <div className="sticky-top p-0 m-0" style={{top:"1rem"}} > */}
 
                         <NavDown delay={0.25}>
