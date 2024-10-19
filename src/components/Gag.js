@@ -40,12 +40,12 @@ function Gag({show, setShow}) {
     }, [speed])
 
     return (
-        <Navbar className={`test prevent-select nav-trans inter-love ${show? 'nav-mask-show' : pos > 180? 'nav-mask-hide': 'nav-mask-show'}`} 
+        <Navbar className={`prevent-select nav-trans inter-love ${show? 'nav-mask-show' : pos > 180? 'nav-mask-hide': 'nav-mask-show'}`} 
         sticky="top"
         style={{zIndex:`${!show?-10:3}`,backgroundColor:"rgb(255,255,255)", opacity: 0.8, maxWidth:"", margin:"auto"}}
         >
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
-            <Container fluid className='bar-bar justify-content-left mx-3 mx-sm-3 mx-md-4 mx-lg-5'>
+            <Container fluid className='bar-bar justify-content-left mx-xs-2 mx-sm-3 mx-md-4 mx-lg-5'>
                 <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
                    <span className='headings'>
                     {/* <span className='stylin'>/</span> */}
@@ -55,7 +55,7 @@ function Gag({show, setShow}) {
                     <Nav className='bar-bar-bar justify-content-left'>
                             {/*decrease text size around 750 px client width*/}
                         {width > 595 ? 
-                                <Nav.Link className={`nav-link ${highlight == "Notes" && "highlight"}`} onClick={() => {setHighlight("Notes")}}>Resume</Nav.Link>
+                                <Nav.Link href='https://grasscompany.tech/pdf/resume.pdf' className={`nav-link ${highlight == "Notes" ? "highlight":""}`} onClick={() => {setHighlight("Projects")}}>Resume</Nav.Link>
                                 :
                                 <SmallMenu isNavEvenHereInTheFirstPlace={show} highlight={highlight} setHighlight={setHighlight}></SmallMenu>
                         }
@@ -64,7 +64,7 @@ function Gag({show, setShow}) {
                         }
                         
                     </Nav>
-                {width > 1200 && // 1200
+                {width > 1100 && // 1200
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
                             <span className='headings'>

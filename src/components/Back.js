@@ -3,7 +3,7 @@ import left from "../assets/left.svg";
 function Back() {
     const navigate = useNavigate();
     return (
-        <div className="test" style={{padding:"10px 0 28px 0"}}>
+        <div className="" style={{padding:"10px 0 15px 0", zIndex:"2"}}>
             <button 
                 className="unbutton" 
                 // style={{marginLeft:""}} 

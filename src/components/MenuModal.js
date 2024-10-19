@@ -10,7 +10,7 @@ export default function MenuModal({tags, setTags}) {
     }
     return (
         <div className="m-0 p-0 modal-div">
-            <button className={`modal-button unbutton animation ${show? "no-more-display" :""}`}
+            <button className={`modal-button unbutton animations ${show? "no-more-display" :""}`}
              onClick={handleClick}
              style={{display:`${show?"":""}`}}
             >
@@ -21,7 +21,8 @@ export default function MenuModal({tags, setTags}) {
                 
             </button>
             
-                <div className={`basic-modal ${show? "animatronics" : "no-more-display"}`}>
+                <div className={`basic-modal ${show? "animatronics" : "no-more-display"}`}
+                >
                     <div className="modal-contents mb-4 pt-2 px-2">
                         <Filter tags={tags} setTags={setTags}></Filter>
                         <button className="unbutton modal-close-button modal-close-shape" onClick={handleClick}><WhiteRight></WhiteRight></button>

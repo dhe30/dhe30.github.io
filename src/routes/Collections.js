@@ -10,21 +10,21 @@ export default function Collections() {
         <ProjectWrapper wid={1070}>
             <Crumbs crumbs={["Home", "Projects", "Collections"]}></Crumbs>
             {
-                Object.keys(data.collections).map((elem) => {
+                Object.keys(data.collections).map((elem, i) => {
                     const projects = data.collections[elem];
                     const rand = Math.floor(Math.random()*projects.projects.length);
                     return (
-                        <>
-                        <Collection title={elem} image={projects.thumbnail}></Collection>
-                        <div className=" test ps-4 mx-auto mb-5" style={{width:"fit-content"}}>
-                           { [0,1].map((element,index) => {
-                                const project = projects.projects[(rand+index)%projects.projects.length]
-                                return <MiniCollections path={elem} title={project.title} description={project.description} image={project.images[0].img}></MiniCollections>
-                            })
-                            }
-                            
+                        <div className="p-0 m-0" key={i}>
+                            <Collection tags={projects["general-tags"]} title={elem} image={projects.thumbnail} description={projects.description}></Collection>
+                            <div className=" ps-4 mx-auto mb-5" style={{width:"fit-content"}}>
+                            { [0,1].map((element,index) => {
+                                    const project = projects.projects[(rand+index)%projects.projects.length]
+                                    return <MiniCollections key={index} path={elem} title={project.title} description={project.description} date={project.date} image={project.images[0].img}></MiniCollections>
+                                })
+                                }
+                                
+                            </div>
                         </div>
-                        </>
                     )
                 })
             }

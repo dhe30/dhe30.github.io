@@ -8,12 +8,13 @@ function MiniCollections({path, title, image, description, date}) {
     const [show, setShow] = useState()
     return (
         <Row 
-            className="m-0 p-0 test pt-5"
-            style={{borderLeft:"3px dashed black"}}
+            className="m-0 p-0 pt-5  dashed-border"
+            // style={{borderLeft:"3px dashed black",
+            // }}
             onMouseEnter={() => setShow(true)} 
             onMouseLeave={() => setShow(false)}
         >
-            <Col className="test pb-3" xs="auto" style={{position:"relative"}}>
+            <Col className="pb-3 ms-1" xs="auto" style={{position:"relative"}}>
                     <img 
                         alt="" 
                         style={{
@@ -24,14 +25,14 @@ function MiniCollections({path, title, image, description, date}) {
                             objectPosition:"top"
                         }} 
                         src={require(`../assets/${image || "map.png"}`)}></img>
-                    <div className="p-0 m-0" style={{height:"16px", width:"16px", border:"3px solid black", borderRadius:"8px", backgroundColor:"white", position:"absolute", top:"65px", left:"-10px"}}></div>
+                    <div className="p-0 m-0" style={{height:"16px", width:"16px", border:"3px solid black", borderRadius:"8px", backgroundColor:"white", position:"absolute", top:"65px", left:"-11px"}}></div>
             </Col>
-            <Col sm='12' className="sm-12 " style={{maxWidth:"434px"}}>
-                <span className="test istok-web-regular" style={{display: "block"}}>
-                    <h2 className="test me-2 inria-sans-regular" style={{display: "inline-block", fontSize: "24px"}}>{date || "March 2017"}</h2>   
-                    <SpecialLink show={show} path={path.toLowerCase() + `#${title.replace(/\s/g, "")}`} title={title}></SpecialLink>
+            <Col style={{minWidth:"300px",maxWidth:""}}>
+                <span className="istok-web-regular" style={{display: "inline-block"}}>
+                    <h2 className="me-2 inria-sans-regular" style={{display: "inline-block", fontSize: "24px"}}>{date || "March 2017"}</h2>   
+                    <SpecialLink smaller={true} show={show} path={path.toLowerCase() + `#${title.replace(/\s/g, "")}`} title={title}></SpecialLink>
                 </span>
-                <p style={{fontSize:"16px", whiteSpace:"pre-wrap"}}>{description.replace(/\n|\r/g, " ").substring(0,description.replace(/\n|\r/g, " ").substring(0, 123).lastIndexOf(" "))+"..."||"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ..."}</p>
+                <p className="" style={{fontSize:"16px", whiteSpace:""}}>{description.replace(/\n|\r/g, " ").substring(0,description.replace(/\n|\r/g, " ").substring(0, 123).lastIndexOf(" "))+"..."||"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ..."}</p>
                 <div></div>
             </Col>
         </Row>

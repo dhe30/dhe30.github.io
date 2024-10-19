@@ -27,22 +27,23 @@ function Breadish({bread = {"Collections" : ["collectionitem1", "collectionitem2
         );
     }
     return (
-    <div className='mb-3 test'>
+    <div className='mb-3'>
         <Accordion defaultActiveKey={[]} alwaysOpen>
             {Object.keys(data.collections).map((item, index) => {
                 return (
-                    <div className='inter-love unlist' style={{fontSize: '16px', lineHeight:"1.5"}}>
+                    <div key={item} className='inter-love unlist' style={{fontSize: '16px', lineHeight:"1.5"}}>
                         <CustomToggle eventKey={index}>{item} </CustomToggle>
                         <Accordion.Collapse eventKey={index} className='' style={{width:"fit-content"}}>
                             <ul className='' style={{marginBottom:"0px"}}>
                             {(data.collections[item].projects).map((elem) => {
                                 return(
-                                    <li className='' style={{lineHeight:"1.5"}}>
+                                    <li className='' key={elem.title} style={{lineHeight:"1.5"}}>
                                         <Link
                                             to={"/" + item.toLowerCase() + `#${elem.title.replace(/\s/g, "")}`}
                                         >
                                             
-                                            <span className='breadlet'
+                                            <span className='breadlet no-wrap d-block mask-span'
+                                            style={{width:"190px"}}
                                             ><Right 
                                             // style={{verticalAlign:"baseline"}}
                                             className='me-1'

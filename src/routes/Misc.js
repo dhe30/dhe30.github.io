@@ -25,7 +25,7 @@ export default function Misc() {
                 </div>
             </div> */}
             {/* style={{width:`${width < selfStarter ? width < 1200 ? width < 810 ? width-40 : 875 - ((1200 - width)*((width/1200)**0.5)**0.5) : 875 - ((selfStarter - width)*(width/selfStarter)) : 875}px`}} */}
-            <div className="test graphics mx-auto" style={{width:"100%"}} ref={wither}>
+            <div className="graphics mx-auto" style={{width:"100%"}} ref={wither}>
                     <div className="special-border m-1">
                         <Crumbs crumbs={["Home", "Projects", "Collections", "Graphics"]} white={true}></Crumbs>
                         {

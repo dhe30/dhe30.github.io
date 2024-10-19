@@ -21,6 +21,9 @@ function App() {
   const [tags, setTags] = useState([]);
   const [show, setShow] = useState([]);
   const { pathname, hash, key } = useLocation();
+  useEffect(() => {
+    // document.addEventListener("touchstart", function(){}, true);
+  },[])
 
   useEffect(() => {
     // if not a hash link, scroll to top

@@ -87,7 +87,7 @@ code {
     -0.5px  0   0 #CB7AE0;
 }
 
-.highlight, .nav-link:focus  {
+.highlight  {
   color: #CB7AE0 !important;
   -webkit-text-fill-color: #CB7AE0;
 
@@ -301,6 +301,7 @@ a {
 .graphics {
   position: relative;
   /* height: 1200px; */
+  border: 1px solid rgba(255, 255, 255, 0);
   background-image: url("assets/vintage-pink-and-cream-dark-floral-plain-820x532\ 3.png");
 }
 
@@ -322,21 +323,26 @@ a {
 .modal-div {
   position: sticky;
   top: 50px;
-  left: 95vw;
+  left: 94vw;
   z-index: 10;
   /* padding: 0; */
   width: fit-content !important;
   height: fit-content !important;
+  border: 1px solid rgba(255, 255, 255, 0);
   /* overflow: hidden; */
+  /* overflow-y: hidden; */
 }
 
 .modal-contents {
+  /* position: absolute;
+  top: 35px; */
   position: absolute;
-  top: 35px;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 5px;
   border: 1px solid black;
   /* height: fit-content; */
+  /* transform: translateX(100px); */
+
 }
 
 .animatronics {
@@ -347,9 +353,7 @@ a {
 .animations {
   transition: all 0.25s;
 }
-.testColor {
-  /* border: 2px solid #f4b7d4; */
-}
+
 .no-more-display {
   transition: all 0.25s;
   transform: translateX(100px);
@@ -357,8 +361,12 @@ a {
 }
 
 .basic-modal {
-  position: relative;
-  border: 1px solid red;
+  position: fixed;
+  top: 90px;
+  /* transform: translateX(100px);
+  transition: all 0.25s; */
+
+
 }
 
 .modal-close-button {
@@ -367,6 +375,10 @@ a {
   left: -30px;
 }
 
+.modal-window {
+  position: absolute;
+  height: 50px;
+}
 .modal-close-shape {
   width: 30px;
   height: 60px;
@@ -523,8 +535,8 @@ a {
   border-radius: 7px;
   transition: all 0.15s ease-out;
   z-index: 2;
-
 }
+
 .special-link-animation {
   background-color: #fcb7f4;
 
@@ -585,13 +597,17 @@ a {
 }
 
 .footer {
+  /* border: 1px solid red; */
   background-color: #f1bbff;
+  overflow-y: hidden;
+  border-radius: 15px 15px 0 0 ;
 }
 
 .footer-foot {
   display: inline-block;
   color:#f1bbff;
   font-size: 128px;
+  /* overflow-y: hidden; */
   /* font-weight: 900; */
   /* transform: scaleX(1.2);
   transform-origin: 0 0; */
@@ -616,5 +632,62 @@ a {
   margin-top: -10px;
 }
 .footer-label {
-  /* color: #9c6ca8; */
+  /* color: #ee99ff; */
+}
+.link-to{
+  font-weight: bold;
+  transition: all 0.1s;
+
+
+}
+.link-to:hover img {
+  transform: translate(8px,-8px);
+}
+.link-to:hover {
+  font-weight: 900;
+}
+.animation-fast{
+  transition: all 0.1s;
+}
+.dashed-border {
+  /* border-image:  url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
+  /* border-left: 3px dashed #000000; */
+  background-image: linear-gradient(to bottom, #000000 50%, rgba(255, 255, 255, 0)50%);
+  background-position: left;
+  background-size: 0.15rem 15px;
+  background-repeat: repeat-y;
+  /* border: dashed 4px #000; */
+  /*optional*/
+
+  /* the initial value of border-style is "none", so it must be set to a different value for the border-image to show*/
+  /* border-style: solid; */
+
+  /* Individual border image properties */
+  /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
+}
+
+.crumbs-head {
+  font-size: min(56px, 14vmin);
+  margin-top:-8px;
+  display:block; 
+  line-height:70px;
+}
+.no-overflowX{
+  /* border: 1px solid red; */
+  overflow-x: hidden;
+}
+
+.no-wrap{
+  white-space:nowrap;
+
+}
+
+.mask-span {
+  -webkit-mask-image: linear-gradient(to right, 99%, transparent);
+  mask-image: linear-gradient(to right, black 80%, transparent 95%);
+  mask-position: 0 0px;
+}
+
+.make-exists {
+  border: 1px solid rgba(255, 255, 255, 0);
 }

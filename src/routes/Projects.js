@@ -87,13 +87,14 @@ export default function Projects() {
                     console.log(index)
                     return (
                         // <div className="m-0 p-0 wuhcueyvchewdbvdv" id={index + ""}>
-                        <Row className="p-0 m-0 mb-5" id={elem.title}>
+                        <Row className="p-0 m-0 mb-5" id={elem.title.replace(/\s/g, "")}>
                             <ProjectCase 
                                 width={width} 
                                 tags={elem.tags} 
                                 title={elem.title} 
                                 imagers={elem.images}
                                 description={elem.description}
+                                repo={elem.repo}
                             >
                             </ProjectCase>
                         </Row>

@@ -112,7 +112,7 @@ function Filter({tags, setTags}) {
     const inputRef = useRef(null);
 
     return ( 
-        <div className="mb-4 testColor test" style={{width:"189px", position:"relative"}}>
+        <div className="mb-4 testColor" style={{width:"189px", position:"relative"}}>
             <img alt="" src={filter} className="mb-2"></img>
             <span className="inria-sans-regular" style={{fontSize:"18px"}}>Filter</span>
             <button 
@@ -159,7 +159,7 @@ function Filter({tags, setTags}) {
                     {
                     results.map((elem) => {
                     return (
-                        <button className="results test unbutton px-3" type="button" onMouseDown={()=>handleResults(elem)}>{elem}</button> 
+                        <button className="results unbutton px-3" type="button" onMouseDown={()=>handleResults(elem)}>{elem}</button> 
                     )
                 })}
                 </div>

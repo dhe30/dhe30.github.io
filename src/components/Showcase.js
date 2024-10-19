@@ -23,8 +23,8 @@ function Showcase({clientWidth, imagers}) {
     const upperLimit = 1333; // should be == to limit if text width is resolved 
     const heightRatio = 370;
 
-    const sizeWidth = width < limit ? width < 600 ? 520-(600-width):clientWidth: width > upperLimit ? 520 + (width - upperLimit):520;
-    const sizeHeight = width < limit ? width < 600 ? ((520-(600-width))/520)*370:((clientWidth)/520)*370: width > upperLimit ? ((520 + (width - upperLimit))/520) * 370: 370
+    const sizeWidth = width < limit ? width < 520 ? (width-10):clientWidth: width > upperLimit ? 520 + (width - upperLimit - 20):520;
+    const sizeHeight = width < limit ? width < 520 ? (((width-10))/520)*370:((clientWidth)/520)*370: width > upperLimit ? ((520 + (width - upperLimit - 20))/520) * 370: 370
 
     const [one,setOne] = useState([two,three,four]);
     const [images, setImages] = useState([minus(0),0,plus(0),])
@@ -160,7 +160,7 @@ function Showcase({clientWidth, imagers}) {
                             style={{
                                 position:"absolute",
                                 left:"0",
-                                top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
+                                top: `${sizeHeight/2}px`,
                                 zIndex: "1"
                             }}
                         >
@@ -179,7 +179,7 @@ function Showcase({clientWidth, imagers}) {
                             style={{
                                 position:"absolute",
                                 right:"0",
-                                top: `${width < limit ? ((clientWidth)/520)*370/2:370/2}px`,
+                                top: `${sizeHeight/2}px`,
                                 zIndex: "1"
                             }}
                         >
