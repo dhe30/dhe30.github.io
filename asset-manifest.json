@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c2b49ca8.css",
-    "main.js": "/static/js/main.c4f53a4c.js",
+    "main.css": "/static/css/main.09f111c2.css",
+    "main.js": "/static/js/main.71c1f1b1.js",
     "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
     "static/media/taxistshowcasegrouping-ezgif.com-speed.gif": "/static/media/taxistshowcasegrouping-ezgif.com-speed.d57af5882a441d851990.gif",
     "static/media/taxistshowcasegrouping.gif": "/static/media/taxistshowcasegrouping.1921d16c5b27b55dd1ea.gif",
@@ -82,12 +82,12 @@
     "static/media/reshot-icon-arrow-diagonal-down-left-CDJ289AMET.svg": "/static/media/reshot-icon-arrow-diagonal-down-left-CDJ289AMET.52e42256e0619b4bd99c.svg",
     "static/media/Frame 28.svg": "/static/media/Frame 28.62ab1f5bb16e6f8759faf804fa8c364c.svg",
     "static/media/README": "/static/media/README.565e7fdde63a8bca1a3d",
-    "main.c2b49ca8.css.map": "/static/css/main.c2b49ca8.css.map",
-    "main.c4f53a4c.js.map": "/static/js/main.c4f53a4c.js.map",
+    "main.09f111c2.css.map": "/static/css/main.09f111c2.css.map",
+    "main.71c1f1b1.js.map": "/static/js/main.71c1f1b1.js.map",
     "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2b49ca8.css",
-    "static/js/main.c4f53a4c.js"
+    "static/css/main.09f111c2.css",
+    "static/js/main.71c1f1b1.js"
   ]
 }
