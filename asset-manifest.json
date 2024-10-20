@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.488b006c.css",
-    "main.js": "/static/js/main.71f3c44d.js",
+    "main.js": "/static/js/main.ac367af7.js",
     "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
     "static/media/taxistshowcasegrouping-ezgif.com-speed.gif": "/static/media/taxistshowcasegrouping-ezgif.com-speed.d57af5882a441d851990.gif",
     "static/media/taxistshowcasegrouping.gif": "/static/media/taxistshowcasegrouping.1921d16c5b27b55dd1ea.gif",
@@ -83,11 +83,11 @@
     "static/media/Frame 28.svg": "/static/media/Frame 28.62ab1f5bb16e6f8759faf804fa8c364c.svg",
     "static/media/README": "/static/media/README.565e7fdde63a8bca1a3d",
     "main.488b006c.css.map": "/static/css/main.488b006c.css.map",
-    "main.71f3c44d.js.map": "/static/js/main.71f3c44d.js.map",
+    "main.ac367af7.js.map": "/static/js/main.ac367af7.js.map",
     "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.488b006c.css",
-    "static/js/main.71f3c44d.js"
+    "static/js/main.ac367af7.js"
   ]
 }
