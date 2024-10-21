@@ -15,17 +15,17 @@ import { QueryContext, TagContext } from "../store/TagContext";
 import ScrollAnimator from "./wrappers/ScrollAnimator";
 import NavDown from "./wrappers/NavDown";
 
-export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 1, children}) {
+export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, children}) {
     const { width } = useWindowSize();
     const [crumb, setCrumb] = useState([]);
     const [tags, setTags, show] = useOutletContext();
     const [loading, setLoading] = useState(true);
     const wither = useRef();
-    useEffect(() => {
-        setTimeout(()=>{
-            window.dispatchEvent(new Event('resize'))
-        }, 100)
-    },[])
+    // useEffect(() => {
+    //     setTimeout(()=>{
+    //         window.dispatchEvent(new Event('resize'))
+    //     }, 500)
+    // },[])
     return (
         <Container fluid className="d-flex justify-content-center px-1 m-0 p-relative">
                 <Row className="justify-content-around m-0 p-0 mx-xs-2 mx-sm-3 mx-md-4 mx-lg-5" style={{maxWidth:""}}>

@@ -5,6 +5,7 @@ import github from "../assets/icons8-github.svg";
 import arrow from "../assets/icons8-rightward-up-arrow-24.png";
 import down from "../assets/download-svgrepo-com.svg";
 import useWindowSize from "../hooks/useWindowSize";
+import { Link } from "react-router-dom";
 
 export default function Foot() {
     const {width } = useWindowSize();
@@ -25,19 +26,20 @@ export default function Foot() {
                 <Col className="xs-auto pb-3" style={{maxWidth:"200px"}}>
                     <h5 className="jetbrains-mono-yuh footer-label" style={{}}>nav</h5>
                     <span className="mb-1 jetbrains-mono-yuh with-icon d-block">
-                        collections
+                    <Link to="/">collections</Link>
                         <img src={arrow} height={15} style={{verticalAlign:"baseline"}}></img>
                     </span>
                     <span className="mb-1 jetbrains-mono-yuh with-icon d-block">
-                        graphics
+                    <Link to="/graphics">graphics</Link>
+
                         <img src={arrow} height={15} style={{verticalAlign:"baseline"}}></img>
                     </span>
                     <span className="mb-1 jetbrains-mono-yuh with-icon d-block">
-                        webdev
+                        <Link to="/webdev">webdev</Link>
                         <img src={arrow} height={15} style={{verticalAlign:"baseline"}}></img>
                     </span>
                     <span className="mb-1 jetbrains-mono-yuh with-icon d-block">
-                        resume 
+                        <a href='https://grasscompany.tech/pdf/resume.pdf'>resume</a> 
                         <img src={down} height={15} style={{verticalAlign:""}}></img>
                     </span>
                 </Col>

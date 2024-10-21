@@ -691,3 +691,11 @@ a {
 .make-exists {
   border: 1px solid rgba(255, 255, 255, 0);
 }
+
+.graphics-text{
+  min-width: 320px !important;
+  max-width: 508px !important;
+}
+.min-250{
+  min-width: 250px;
+}

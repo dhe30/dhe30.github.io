@@ -259,7 +259,7 @@ function Showcase({clientWidth, imagers}) {
                     width: `${sizeWidth}px`,
                 }}
             >
-                <p className="d-block pt-3 inter-love">{test[currentActual].caption} {sizeWidth} </p>
+                <p className="d-block pt-3 inter-love">{test[currentActual].caption}</p>
                 <div className="position-absolute" style={{bottom:"0", left:"50%", transform: "translate(-50%, -50%)"}}>
                     {[...Array(test.length).keys()].map((elem) => {
                         return (<span className="dot" style={{backgroundColor: `${elem === currentActual ? "black":""}`}}></span>)

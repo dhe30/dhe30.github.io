@@ -9,6 +9,7 @@ import useFetch from '../hooks/useFetch';
 import { NavbarCollapse } from 'react-bootstrap';
 import SmallMenu from './SmallMenu';
 import solidius from "../assets/icons8-solidus-key-50.png";
+import { Link } from 'react-router-dom';
 function Gag({show, setShow}) {
 
     const [date, setDate] = useState(new Date(Date.now()));
@@ -47,10 +48,11 @@ function Gag({show, setShow}) {
             {/*!!! ADD RESPONZIVE PADDING + MAX WIDTH, LOOK AT ROUTES*/}
             <Container fluid className='bar-bar justify-content-left mx-xs-2 mx-sm-3 mx-md-4 mx-lg-5'>
                 <Navbar.Brand className='bar' style={{marginLeft:"0"}}> 
+                    <Link to={"/"}>
                    <span className='headings'>
                     {/* <span className='stylin'>/</span> */}
                 <img src={solidius} style={{verticalAlign:"-10px"}}></img>
-                    dhe30</span>
+                    dhe30</span></Link>
                 </Navbar.Brand>
                     <Nav className='bar-bar-bar justify-content-left'>
                             {/*decrease text size around 750 px client width*/}

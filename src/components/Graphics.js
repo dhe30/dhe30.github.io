@@ -1,21 +1,24 @@
-import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 export default function Graphics({image, title, date, description}) {
-    const width = useRef();
+    // useEffect(() => {
+    //     setTimeout(()=>{
+    //         window.dispatchEvent(new Event('resize'))
+    //     }, 500)
+    // },[])
     return (
         <Container className="m-0">
-            <Row className="justify-content-center">
-                <Col xs="auto" ref={width} className="glass-pane p-1">
+            <Row className="justify-content-center d-flex">
+                <Col xs="auto" className="glass-pane p-1">
                     <img className="wrap-text" src={require(`../assets/${image || "T4780203 1.png"}`)}></img>        
                 </Col>
-                <Col xs="auto" className="glass-pane py-2 make-exists" style={{maxWidth:`${width.current? width.current.offsetWidth:""}px`}}>
-                    <span className="align-top inter-love">
+                <Col className="glass-pane py-2 graphics-text">
+                    <span className="align-top inter-love" style={{width:"fit-content"}}>
                             <span className="fonty-smallest"> 
                                 <span className="black-diamonds">
                                     &#9670;
                                 </span> 
-                                title 
+                                title
                                 <span className="black-diamonds">
                                     &#9670;
                                 </span>
@@ -26,7 +29,7 @@ export default function Graphics({image, title, date, description}) {
                                 <span className="fonty-small d-block py-3">Overview</span>
                                 <p style={{minWidth:"250px"}}>
                                     <span style={{whiteSpace:"pre-wrap"}}>
-                                        {description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex"}
+                                        {description || "Lorem"}
                                     </span>
                                 </p>
                             </span>
