@@ -51,6 +51,7 @@ function Gag({show, setShow}) {
                     <Link to={"/"}>
                    <span className='headings'>
                     {/* <span className='stylin'>/</span> */}
+                    
                 <img src={solidius} style={{verticalAlign:"-10px"}}></img>
                     dhe30</span></Link>
                 </Navbar.Brand>

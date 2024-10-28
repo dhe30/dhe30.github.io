@@ -3,12 +3,12 @@
         "webdev": {
             "description" : "Full stack projects",
             "thumbnail": "taxim.png",
-            "general-tags": ["flask", "vue", "SQL", "python", "JavaScript"],
+            "general-tags": ["Flask", "Vue", "SQL", "Python", "JavaScript"],
             "projects": [
                 {
                     "title": "Taxism",
                     "repo":"https://github.com/jus910/NoseDamage",
-                    "tags": ["chartJS", "python", "flask", "JavaScript", "SQL", "MapBox"],
+                    "tags": ["chartJS", "Python", "Flask", "JavaScript", "SQL", "MapBox"],
                     "date": "May 2023",
                     "description": "This data science project visualizes NYC taxi pickups and drop-off clusters from 2010-2014, providing an interactive map where users can click on a point to display the specific route taken. The project handles over 500 million entries from a large database. Built with a full stack using Flask (Python web framework) and SQLite, the application leverages the robust Mapbox API (used by platforms like Snapchat and Instacart) to render maps, clusters, and routes. Additionally, Chart.js is utilized to display graph-based statistics, while the frontend is crafted with Bootstrap and Jinja for a seamless, responsive user experience.", 
                     "images": [
@@ -46,7 +46,7 @@
                 {
                     "title": "Engram Writing Platform",
                     "repo":"https://github.com/jus910/NoseDamage",
-                    "tags": ["firebase", "vuex", "vue3", "JavaScript", "AI/ML"],
+                    "tags": ["Firebase", "Vuex", "Vue", "JavaScript", "AI/ML"],
                     "date": "August 2023",
                     "description": "An AI-driven writing platform designed for CollegeBoard test prep, my internship project at Engram, an early-stage EdTech company focused on creating digital, interactive learning experiences. The platform offers writing modules tailored to different learning levels, providing students with high-quality feedback through a large language model fine-tuned for historical argumentation. This project aims to address disparities in resource availability across schools. It was a frontend-focused project built using a Vue.js and Firestore tech stack, with Vuex for efficient state management.", 
                     "images": [
@@ -85,7 +85,7 @@
         },
         "graphics":{
             "description": "Graphics engine written in Java to render various shapes and meshes with lighting and shading. Each feature is followed by a showcase.",
-            "general-tags": ["java","python"],
+            "general-tags": ["Java","Python"],
             "thumbnail":"T4780203 1.png",
             "projects": [
                 {

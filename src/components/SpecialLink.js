@@ -10,7 +10,7 @@ export default function SpecialLink({show, path, seeAll, title, smaller}) {
     const newShow = useIntersection(ref, "-150px");
     const useShow = width <= 768 ? newShow : show;
     return (
-        <Link ref={ref} to={path} className="d-inline-block">
+        <Link ref={ref} to={path} className="d-inline-block pe-5 test">
             {/* <div className="white-block d-inline-block"> */}
             <h1 className="istok-web-regular d-inline white-block">{ title  }</h1>
             {/* </div> */}
@@ -21,7 +21,7 @@ export default function SpecialLink({show, path, seeAll, title, smaller}) {
                 >see all</div>
             }
             <div
-                className={`ms-1 mb-1 special-link d-inline-block ${useShow ? "special-link-animation" : seeAll && "see-all-test"}`}
+                className={`ms-1 mb-1 mt-1 special-link d-inline-block ${useShow ? "special-link-animation" : seeAll && "see-all-test"}`}
                 style={{
                     verticalAlign:"baseline",
                     position:"relative",

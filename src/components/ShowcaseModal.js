@@ -6,6 +6,7 @@ export default function ShowcaseModal({handleClose, show, image}) {
         <Modal dialogClassName="showcase-modal-prime" className="actually" show={show} onHide={handleClose} centered>
             {/* <Modal.Body closeButton className="showcase-modal"> */}
                 <img 
+                    alt="img"
                     src={require(`../assets/${image.img}`)}
                     className="modal-image"
                 ></img>

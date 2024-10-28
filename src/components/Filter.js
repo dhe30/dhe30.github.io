@@ -8,7 +8,7 @@ function Filter({tags, setTags}) {
         console.log(`destroy ${tag}`);
     }
 
-    const wordBank = ["React.js", "Java", "JavaScript", "firebase", "skills"];
+    const wordBank = ["React", "Java", "JavaScript", "Firebase", "AI/ML", "Vue", "Vuex", "Python", "SQL", "Flask", "MapBox"];
     const [resultsClicked, setResultsClicked] = useState(false);
     const [tagsClicked, setTagsClicked] = useState(false);
     const [showBox, setShowBox] = useState(false);
@@ -155,7 +155,7 @@ function Filter({tags, setTags}) {
                 ></input>
             </form>    
             {(showBox && results && search.length > 0 && isFocused) &&
-                <div>
+                <div className="position-absolute">
                     {
                     results.map((elem) => {
                     return (

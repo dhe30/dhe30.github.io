@@ -347,7 +347,7 @@ a {
 
 .animatronics {
   visibility: visible;
-  transform: translateX(-200px);
+  transform: translateX(max(-50vw, -190px));
   transition: all 0.25s;
 }
 .animations {
@@ -356,13 +356,13 @@ a {
 
 .no-more-display {
   transition: all 0.25s;
-  transform: translateX(100px);
+  transform: translateX(20vw);
   visibility: hidden;
 }
 
 .basic-modal {
-  position: fixed;
-  top: 90px;
+  position: absolute;
+  top: 35px;
   /* transform: translateX(100px);
   transition: all 0.25s; */
 
@@ -698,4 +698,15 @@ a {
 }
 .min-250{
   min-width: 250px;
+}
+
+.gutters{
+  /* Firefox */
+height: -moz-calc(100% - 400px);
+/* WebKit */
+height: -webkit-calc(100% - 400px);
+/* Opera */
+height: -o-calc(100% - 400px);
+/* Standard */
+height: calc(100% - 400px);
 }

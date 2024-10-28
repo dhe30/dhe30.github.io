@@ -34,8 +34,8 @@ export default function SmallMenu({isNavEvenHereInTheFirstPlace, highlight, setH
             >
               {/* <Popover.Header as="h3">{`Popover`}</Popover.Header> */}
               <Popover.Body>
-                <div className={`nav-link ${highlight == "Notes" && "highlight"} fonty-good-size`} onClick={() => {setHighlight("Notes")}}>Resume</div>
-                <div className={`nav-link ${highlight == "Projects" && "highlight"} fonty-good-size`} onClick={() => {setHighlight("Projects")}}>Projects</div>
+              <a href='https://grasscompany.tech/pdf/resume.pdf' className={`nav-link fonty-good-size`} onClick={() => {setHighlight("Projects")}}>Resume</a>
+              <div className={`nav-link ${highlight == "Projects" && "highlight"} fonty-good-size`} onClick={() => {setHighlight("Projects")}}>Projects</div>
 
                 {/* <strong>Holy guacamole!</strong> Check this info. */}
               </Popover.Body>
