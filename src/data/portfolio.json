@@ -86,7 +86,7 @@
         "graphics":{
             "description": "Graphics engine written in Java to render various shapes and meshes with lighting and shading. Each feature is followed by a showcase.",
             "general-tags": ["Java","Python"],
-            "thumbnail":"T4780203 1.png",
+            "thumbnail":"banner.png",
             "projects": [
                 {
                     "title": "dna",

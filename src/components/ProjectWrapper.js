@@ -21,11 +21,7 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
     const [tags, setTags, show] = useOutletContext();
     const [loading, setLoading] = useState(true);
     const wither = useRef();
-    // useEffect(() => {
-    //     setTimeout(()=>{
-    //         window.dispatchEvent(new Event('resize'))
-    //     }, 500)
-    // },[])
+
     return (
         <Container fluid className="d-flex justify-content-center px-1 m-0 p-relative">
                 <Row className="justify-content-around m-0 p-0 mx-xs-2 mx-sm-3 mx-md-4 mx-lg-5" style={{maxWidth:""}}>
@@ -33,23 +29,13 @@ export default function ProjectWrapper({wid = 1200, restrictionAbove1025 = 0, ch
                     </Col>
                 { width > 800 ?
                     <Col className="position-relative p-0 m-0 px-2" xs="auto" style={{width:"200px"}}>
-                        {/* <div className="test" style={{position:"absolute", top:"-90px", width:"100%", height:"100%"}}>
-                        <div className="test" style={{height:"90px", position:"sticky", top:`${show? 0:-90}px`, transition: "top 0.15s"}}>
-                            <div className="test" style={{position:"absolute", bottom:"-90px"}}> */}
-                            <NavDown delay={0.25}>
-                            {/* {""+show} */}
+                     <NavDown delay={0.25}>
                             <Breadish></Breadish>
                             {width < wid && <Filter tags={tags} setTags={setTags}></Filter>}
                             </NavDown>
-                            {/* </div>
-                        </div>
-                        </div> */}
                     </Col>
                     : 
-                    // <div className="" style={{position:"absolute", top:"55px", height:"100%"}}>
-                                            <MenuModal tags={tags} setTags={setTags}></MenuModal>
-                        // <></>
-                    // </div>
+                    <MenuModal tags={tags} setTags={setTags}></MenuModal>
                 }
                 <Col ref={wither} className="p-0 m-0" style={{margin:"auto",position:"relative", maxWidth:`${width > 800? width > wid? width - (restrictionAbove1025 || 480) + "px":width - 275 + "px":""}`}}>
                 {/* {width > 800? width - 250:""} */}

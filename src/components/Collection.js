@@ -8,19 +8,22 @@ import { useState } from "react";
 function Collection({title, image, description, tags}) {
     const [show, setShow] = useState()
     return (
-        <Row className="m-0 pt-5 d-flex justify-content-center justify-content-sm-start" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+        <Row className="m-0 pt-5 justify-content-center justify-content-sm-start" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
             <Col className="m-0 p-0 pb-3" xs="auto">
                     <img 
+                    className=""
                         alt="" 
                         style={{
                             objectFit: "cover",
-                            width: "364px",
+                            width: "99vw",
+                            minWidth: "330px",
+                            maxWidth:"100%",
                             height: "254px",
                             borderRadius: "10px",
                         }} 
                         src={require(`../assets/${image || "taxim.png"}`)}></img>
             </Col>
-            <Col style={{minWidth:"300px"}}>
+            <Col className="" style={{minWidth:"300px"}}>
                 
                     <SpecialLink show={show} path={title.toLowerCase() || "/"} title={title} seeAll={true}></SpecialLink>
                 

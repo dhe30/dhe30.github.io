@@ -27,7 +27,7 @@ function MiniCollections({path, title, image, description, date}) {
                         src={require(`../assets/${image || "map.png"}`)}></img>
                     <div className="p-0 m-0" style={{height:"16px", width:"16px", border:"3px solid black", borderRadius:"8px", backgroundColor:"white", position:"absolute", top:"65px", left:"-11px"}}></div>
             </Col>
-            <Col style={{minWidth:"300px",maxWidth:""}}>
+            <Col style={{minWidth:"200px",maxWidth:""}}>
                 <span className="istok-web-regular" style={{display: "inline-block"}}>
                     <h2 className="me-2 inria-sans-regular" style={{display: "inline-block", fontSize: "24px"}}>{date || "March 2017"}</h2>   
                     <SpecialLink smaller={true} show={show} path={path.toLowerCase() + `#${title.replace(/\s/g, "")}`} title={title}></SpecialLink>

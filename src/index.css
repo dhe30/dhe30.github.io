@@ -347,7 +347,7 @@ a {
 
 .animatronics {
   visibility: visible;
-  transform: translateX(max(-50vw, -190px));
+  transform: translateX(max(-55vw, -190px));
   transition: all 0.25s;
 }
 .animations {
